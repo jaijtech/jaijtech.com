@@ -37,7 +37,7 @@ function Header() {
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-sm">
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         <Link href="/" className="text-xl font-bold tracking-tight">
-          jaijtech
+          j<span className="text-accent">ai</span>jtech
         </Link>
         <div className="hidden items-center gap-6 sm:flex">
           <Link
@@ -53,7 +53,7 @@ function Header() {
             Soporte
           </Link>
           <a
-            href="https://docs.jaijtech.com"
+            href="https://www.npmjs.com/package/@jaijtech/verifactu"
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm text-muted transition-colors hover:text-foreground"

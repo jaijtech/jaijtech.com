@@ -8,16 +8,16 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
           <div className="flex flex-col items-center text-center">
             <span className="mb-6 inline-flex items-center rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm text-accent">
-              SDK TypeScript para Verifactu AEAT
+              SDK Verifactu AEAT
             </span>
             <h1 className="max-w-4xl text-4xl font-bold tracking-tight md:text-6xl lg:text-7xl">
-              Facturación electrónica española{" "}
-              <span className="text-accent">resuelta</span>
+              Integra Verifactu en tu{" "}
+              <span className="text-accent">negocio</span> o{" "}
+              <span className="text-accent">empresa</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-muted md:text-xl">
               Integra Verifactu en tu software con un SDK que gestiona firma
-              XAdES-EPES, cadena SHA-256, envío a la AEAT y QR normativo. Todo
-              en TypeScript.
+              XAdES-EPES, cadena SHA-256, envío a la AEAT y QR normativo.
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <Link
@@ -42,38 +42,38 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats */}
+      {/* Early Adopters */}
       <section className="border-y border-border bg-surface">
-        <div className="mx-auto max-w-6xl px-6 py-16">
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-accent md:text-4xl">
-                1.689
+        <div className="mx-auto max-w-6xl px-6 py-24">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+              Únete a los primeros
+            </h2>
+            <p className="mt-4 text-lg text-muted">
+              Los 10 primeros integradores obtienen licencia Developer gratuita
+              durante 1 año
+            </p>
+          </div>
+          <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-5">
+            {Array.from({ length: 10 }, (_, i) => (
+              <div
+                key={i}
+                className="flex h-28 flex-col items-center justify-center rounded-xl border-2 border-dashed border-border bg-background p-4 text-center"
+              >
+                <span className="text-sm text-muted">Disponible</span>
               </div>
-              <div className="mt-2 text-sm text-muted">Tests</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-accent md:text-4xl">
-                118
-              </div>
-              <div className="mt-2 text-sm text-muted">
-                Rondas de auditoría
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-accent md:text-4xl">
-                100%
-              </div>
-              <div className="mt-2 text-sm text-muted">Mutation score</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-accent md:text-4xl">
-                &#10003;
-              </div>
-              <div className="mt-2 text-sm text-muted">
-                Vector AEAT verificado
-              </div>
-            </div>
+            ))}
+          </div>
+          <div className="mt-8 text-center">
+            <p className="mb-6 text-sm font-medium text-muted">
+              <span className="text-accent">10 de 10</span> plazas disponibles
+            </p>
+            <Link
+              href="/pricing"
+              className="inline-block rounded-lg bg-accent px-8 py-3 text-base font-medium text-white transition-colors hover:bg-accent/90"
+            >
+              Reservar mi plaza
+            </Link>
           </div>
         </div>
       </section>
