@@ -84,6 +84,17 @@ const html = `<!DOCTYPE html>
     }
     .message.success { color: #34d399; }
     .message.error { color: #f87171; }
+    .cta-dev {
+      font-size: 0.875rem;
+      color: #a1a1aa;
+      margin-bottom: 2rem;
+    }
+    .cta-dev a {
+      color: #2563EB;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .cta-dev a:hover { color: #60a5fa; }
     footer {
       position: fixed;
       bottom: 2rem;
@@ -120,6 +131,10 @@ const html = `<!DOCTYPE html>
       </div>
       <div class="message" id="message"></div>
     </form>
+    <p class="cta-dev">
+      ¿Eres desarrollador? &rarr;
+      <a href="/register">Solicita acceso anticipado al sandbox</a>
+    </p>
   </div>
   <footer>
     <a href="mailto:soporte@jaijtech.com">soporte@jaijtech.com</a>
@@ -162,10 +177,13 @@ export function proxy(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // Allow Next.js internal assets
+  // Allow Next.js internal assets and public routes
   if (
     request.nextUrl.pathname.startsWith("/_next") ||
-    request.nextUrl.pathname === "/favicon.ico"
+    request.nextUrl.pathname === "/favicon.ico" ||
+    request.nextUrl.pathname.startsWith("/register") ||
+    request.nextUrl.pathname === "/terms" ||
+    request.nextUrl.pathname === "/privacy"
   ) {
     return NextResponse.next();
   }
