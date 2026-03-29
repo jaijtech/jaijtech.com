@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import RegisterForm from "./register-form";
 
 export const metadata: Metadata = {
-  title: "Registro",
+  title: "Acceso anticipado",
   description:
-    "Crea tu cuenta gratuita de Sandbox y empieza a integrar Verifactu en minutos.",
+    "Solicita acceso anticipado al SDK @jaijtech/verifactu. Sé de los primeros en integrar Verifactu.",
 };
 
 export default function RegisterPage() {

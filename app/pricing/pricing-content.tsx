@@ -53,7 +53,7 @@ const plans: Plan[] = [
       "Actualizaciones incluidas",
     ],
     cta: "Suscribirse",
-    ctaHref: null,
+    ctaHref: "/register",
     highlighted: true,
   },
   {
@@ -73,7 +73,7 @@ const plans: Plan[] = [
       "SLA 99,9%",
     ],
     cta: "Suscribirse",
-    ctaHref: null,
+    ctaHref: "/register",
     highlighted: false,
   },
   {
@@ -93,7 +93,7 @@ const plans: Plan[] = [
       "Onboarding personalizado",
     ],
     cta: "Suscribirse",
-    ctaHref: null,
+    ctaHref: "/register",
     highlighted: false,
   },
   {
@@ -113,7 +113,7 @@ const plans: Plan[] = [
       "Integración on-premise",
     ],
     cta: "Contactar",
-    ctaHref: "mailto:info@jaijtech.com?subject=Consulta Enterprise",
+    ctaHref: "/support",
     highlighted: false,
   },
 ];

@@ -5,6 +5,7 @@ import { useState } from "react";
 export default function RegisterForm() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [submittedEmail, setSubmittedEmail] = useState("");
   const [error, setError] = useState("");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -32,6 +33,7 @@ export default function RegisterForm() {
         throw new Error(body.error || "Error al registrarse");
       }
 
+      setSubmittedEmail(data.email);
       setSuccess(true);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Error al registrarse");
@@ -46,10 +48,11 @@ export default function RegisterForm() {
         <div className="rounded-xl border border-border bg-surface p-8">
           <div className="text-4xl text-accent">&#10003;</div>
           <h2 className="mt-4 text-2xl font-bold">
-            ¡Registro completado!
+            ¡Solicitud recibida!
           </h2>
           <p className="mt-4 text-muted">
-            Revisa tu email para obtener tus credenciales de acceso al sandbox.
+            Te avisaremos pronto en{" "}
+            <span className="text-foreground">{submittedEmail}</span>
           </p>
         </div>
       </section>
@@ -60,10 +63,11 @@ export default function RegisterForm() {
     <section className="mx-auto max-w-md px-6 py-24">
       <div className="text-center">
         <h1 className="text-3xl font-bold tracking-tight">
-          Crear cuenta Sandbox
+          Acceso anticipado
         </h1>
         <p className="mt-4 text-muted">
-          Gratis, sin tarjeta de crédito. Empieza a integrar en minutos.
+          Sé de los primeros en integrar Verifactu. Te avisamos cuando el
+          sandbox esté listo.
         </p>
       </div>
       <form onSubmit={handleSubmit} className="mt-8 space-y-4">
@@ -123,7 +127,7 @@ export default function RegisterForm() {
           disabled={loading}
           className="w-full cursor-pointer rounded-lg bg-accent px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-accent/90 disabled:opacity-50"
         >
-          {loading ? "Registrando..." : "Crear cuenta gratuita"}
+          {loading ? "Enviando..." : "Solicitar acceso"}
         </button>
         <p className="text-center text-xs text-muted">
           Al registrarte aceptas los{" "}
