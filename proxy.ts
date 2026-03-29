@@ -171,25 +171,13 @@ const html = `<!DOCTYPE html>
 </body>
 </html>`;
 
-export function proxy(request: NextRequest) {
-  // Allow API routes through
-  if (request.nextUrl.pathname.startsWith("/api")) {
-    return NextResponse.next();
-  }
+export const config = {
+  matcher: [
+    "/((?!api|_next|favicon\\.ico|register|pricing|support|success|terms|privacy).*)",
+  ],
+};
 
-  // Allow Next.js internal assets and public routes
-  if (
-    request.nextUrl.pathname.startsWith("/_next") ||
-    request.nextUrl.pathname === "/favicon.ico" ||
-    request.nextUrl.pathname.startsWith("/register") ||
-    request.nextUrl.pathname.startsWith("/pricing") ||
-    request.nextUrl.pathname.startsWith("/support") ||
-    request.nextUrl.pathname === "/terms" ||
-    request.nextUrl.pathname === "/privacy"
-  ) {
-    return NextResponse.next();
-  }
-
+export function proxy(_request: NextRequest) {
   return new NextResponse(html, {
     status: 200,
     headers: { "Content-Type": "text/html; charset=utf-8" },

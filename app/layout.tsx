@@ -46,20 +46,12 @@ function Header() {
           >
             Precios
           </Link>
-          <Link
-            href="/support"
-            className="text-sm text-muted transition-colors hover:text-foreground"
-          >
+          <span className="cursor-not-allowed text-sm text-muted/50">
             Soporte
-          </Link>
-          <a
-            href="https://www.npmjs.com/package/@jaijtech/verifactu"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-muted transition-colors hover:text-foreground"
-          >
+          </span>
+          <span className="cursor-not-allowed text-sm text-muted/50">
             Docs
-          </a>
+          </span>
           <Link
             href="/pricing"
             className="rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-accent/90"
