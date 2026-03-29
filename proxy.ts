@@ -177,7 +177,11 @@ export const config = {
   ],
 };
 
-export function proxy(_request: NextRequest) {
+export function proxy(request: NextRequest) {
+  if (request.nextUrl.pathname === "/") {
+    return NextResponse.redirect(new URL("/register", request.url), 302);
+  }
+
   return new NextResponse(html, {
     status: 200,
     headers: { "Content-Type": "text/html; charset=utf-8" },
