@@ -182,6 +182,8 @@ export function proxy(request: NextRequest) {
     request.nextUrl.pathname.startsWith("/_next") ||
     request.nextUrl.pathname === "/favicon.ico" ||
     request.nextUrl.pathname.startsWith("/register") ||
+    request.nextUrl.pathname.startsWith("/pricing") ||
+    request.nextUrl.pathname.startsWith("/support") ||
     request.nextUrl.pathname === "/terms" ||
     request.nextUrl.pathname === "/privacy"
   ) {
