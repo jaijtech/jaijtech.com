@@ -53,7 +53,7 @@ const plans: Plan[] = [
       "Actualizaciones incluidas",
     ],
     cta: "Suscribirse",
-    ctaHref: "/register",
+    ctaHref: null,
     highlighted: true,
   },
   {
@@ -73,7 +73,7 @@ const plans: Plan[] = [
       "SLA 99,9%",
     ],
     cta: "Suscribirse",
-    ctaHref: "/register",
+    ctaHref: null,
     highlighted: false,
   },
   {
@@ -93,7 +93,7 @@ const plans: Plan[] = [
       "Onboarding personalizado",
     ],
     cta: "Suscribirse",
-    ctaHref: "/register",
+    ctaHref: null,
     highlighted: false,
   },
   {
