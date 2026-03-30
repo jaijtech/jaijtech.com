@@ -43,8 +43,8 @@ const plans: Plan[] = [
     description: "1-3 NIFs",
     monthlyPrice: 19,
     annualPrice: 17.1,
-    priceId: "price_developer_monthly",
-    annualPriceId: "price_developer_annual",
+    priceId: "price_1TGauTHpRIgYi6V9SfF1Vcav",
+    annualPriceId: "price_1TGauTHpRIgYi6V9SfF1Vcav",
     features: [
       "1 a 3 NIFs",
       "Entorno producción AEAT",
@@ -61,8 +61,8 @@ const plans: Plan[] = [
     description: "4-50 NIFs",
     monthlyPrice: 3,
     annualPrice: 2.7,
-    priceId: "price_studio_monthly",
-    annualPriceId: "price_studio_annual",
+    priceId: "price_1TGaxRHpRIgYi6V9vT7tpOpv",
+    annualPriceId: "price_1TGaxRHpRIgYi6V9vT7tpOpv",
     priceUnit: "/NIF/mes",
     minPrice: "Mín. 25\u00A0\u20AC/mes",
     features: [
@@ -81,8 +81,8 @@ const plans: Plan[] = [
     description: "51-500 NIFs",
     monthlyPrice: 2,
     annualPrice: 1.8,
-    priceId: "price_scale_monthly",
-    annualPriceId: "price_scale_annual",
+    priceId: "price_1TGazYHpRIgYi6V96F3Ygzyt",
+    annualPriceId: "price_1TGazYHpRIgYi6V96F3Ygzyt",
     priceUnit: "/NIF/mes",
     minPrice: "Mín. 25\u00A0\u20AC/mes",
     features: [
