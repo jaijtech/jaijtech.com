@@ -298,10 +298,9 @@ export default function PricingContent() {
             ¿Necesitas ayuda con la integración?
           </h2>
           <p className="mt-4 text-center text-muted">
-            Consultoría técnica especializada en la integración de Verifactu en
-            tu stack. Experiencia en Java, Spring, Node.js y los principales
-            frameworks y ERPs del mercado español. Disponible para cualquier
-            plan.
+            Consultoría técnica especializada en la integración de Verifactu.
+            Especialistas en ecosistemas Java y los principales frameworks.
+            Disponible para cualquier plan.
           </p>
           <div className="mt-12">
             <button
@@ -356,32 +355,8 @@ export default function PricingContent() {
             Adapter Java oficial
           </h2>
           <p className="mt-4 text-center text-muted">
-            Integra Verifactu en tu plataforma Java sin tocar Node.js. SDK
-            Maven/Gradle + microservicio bridge Docker que expone una API REST
-            limpia. Tu equipo Java solo ve un jar y llamadas HTTP.
+            Integra Verifactu en tu plataforma Java.
           </p>
-          <ul className="mt-10 space-y-4">
-            <li className="flex items-start gap-3 text-sm">
-              <span className="mt-0.5 text-accent">&#10003;</span>
-              <span className="text-muted">
-                Tipos Java nativos (BigDecimal, LocalDate, boolean) convertidos
-                automáticamente al formato AEAT
-              </span>
-            </li>
-            <li className="flex items-start gap-3 text-sm">
-              <span className="mt-0.5 text-accent">&#10003;</span>
-              <span className="text-muted">
-                XML canónico y namespaces garantizados — sin rechazos por
-                formato
-              </span>
-            </li>
-            <li className="flex items-start gap-3 text-sm">
-              <span className="mt-0.5 text-accent">&#10003;</span>
-              <span className="text-muted">
-                Errores accionables en lugar de SoapFault opacos
-              </span>
-            </li>
-          </ul>
           <div className="mt-12 overflow-hidden rounded-xl border border-border">
             <table className="w-full text-sm">
               <thead>
