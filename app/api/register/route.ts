@@ -1,9 +1,19 @@
 import { NextRequest } from "next/server";
 import { Resend } from "resend";
+import { getClientIp, rateLimit } from "@/lib/ratelimit";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: NextRequest) {
+  const ip = getClientIp(request);
+  const { limited } = rateLimit(ip, "/api/register", 3, 10 * 60 * 1000);
+  if (limited) {
+    return Response.json(
+      { error: "Demasiados intentos. Espera 10 minutos antes de volver a intentarlo." },
+      { status: 429 },
+    );
+  }
+
   const { name, email, company, nif } = await request.json();
 
   if (!name || !email) {

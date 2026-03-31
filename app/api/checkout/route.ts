@@ -1,9 +1,19 @@
 import { NextRequest } from "next/server";
 import Stripe from "stripe";
+import { getClientIp, rateLimit } from "@/lib/ratelimit";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
 export async function POST(request: NextRequest) {
+  const ip = getClientIp(request);
+  const { limited } = rateLimit(ip, "/api/checkout", 10, 5 * 60 * 1000);
+  if (limited) {
+    return Response.json(
+      { error: "Demasiados intentos. Espera unos minutos antes de volver a intentarlo." },
+      { status: 429 },
+    );
+  }
+
   const { priceId } = await request.json();
 
   if (!priceId) {
