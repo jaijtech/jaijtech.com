@@ -159,6 +159,8 @@ function formatPrice(price: number): string {
 export default function PricingContent() {
   const [annual, setAnnual] = useState(false);
   const [loadingPlan, setLoadingPlan] = useState<string | null>(null);
+  const [pricingOpen, setPricingOpen] = useState(false);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   async function handleCheckout(plan: Plan) {
     const priceId = annual ? plan.annualPriceId : plan.priceId;
@@ -301,27 +303,40 @@ export default function PricingContent() {
             frameworks y ERPs del mercado español. Disponible para cualquier
             plan.
           </p>
-          <div className="mt-12 space-y-4">
-            <div className="flex items-center justify-between rounded-xl border border-border bg-surface p-5">
-              <div>
-                <p className="font-semibold">Primera semana de análisis</p>
-                <p className="mt-1 text-xs text-muted">Obligatoria</p>
-              </div>
-              <span className="text-lg font-bold">
-                3.000&euro; <span className="text-sm font-normal text-muted">+ IVA</span>
+          <div className="mt-12">
+            <button
+              onClick={() => setPricingOpen(!pricingOpen)}
+              className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl border border-border bg-surface px-5 py-4 text-sm font-medium transition-colors hover:bg-surface-bright"
+            >
+              Ver listado de precios
+              <span className="text-xs text-muted">
+                {pricingOpen ? "\u25B2" : "\u25BC"}
               </span>
-            </div>
-            <div className="flex items-center justify-between rounded-xl border border-border bg-surface p-5">
-              <div>
-                <p className="font-semibold">Bloques adicionales de 8h</p>
+            </button>
+            {pricingOpen && (
+              <div className="mt-4 space-y-4">
+                <div className="flex items-center justify-between rounded-xl border border-border bg-surface p-5">
+                  <div>
+                    <p className="font-semibold">Primera semana de análisis</p>
+                    <p className="mt-1 text-xs text-muted">Obligatoria</p>
+                  </div>
+                  <span className="text-lg font-bold">
+                    3.000&euro; <span className="text-sm font-normal text-muted">+ IVA</span>
+                  </span>
+                </div>
+                <div className="flex items-center justify-between rounded-xl border border-border bg-surface p-5">
+                  <div>
+                    <p className="font-semibold">Bloques adicionales de 8h</p>
+                  </div>
+                  <span className="text-lg font-bold">
+                    1.000&euro; <span className="text-sm font-normal text-muted">+ IVA</span>
+                  </span>
+                </div>
+                <p className="text-center text-xs text-muted">
+                  Precios exclusivos para las primeras integraciones
+                </p>
               </div>
-              <span className="text-lg font-bold">
-                1.000&euro; <span className="text-sm font-normal text-muted">+ IVA</span>
-              </span>
-            </div>
-            <p className="text-center text-xs text-muted">
-              Sin horas sueltas &middot; Sin reembolsos
-            </p>
+            )}
           </div>
           <div className="mt-10 text-center">
             <Link
@@ -428,16 +443,26 @@ export default function PricingContent() {
           <h2 className="text-center text-3xl font-bold tracking-tight">
             Preguntas frecuentes
           </h2>
-          <div className="mt-12 space-y-6">
-            {faqs.map((faq) => (
+          <div className="mt-12 space-y-4">
+            {faqs.map((faq, i) => (
               <div
                 key={faq.question}
-                className="rounded-xl border border-border bg-background p-6"
+                className="rounded-xl border border-border bg-background"
               >
-                <h3 className="font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted">
-                  {faq.answer}
-                </p>
+                <button
+                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  className="flex w-full cursor-pointer items-center justify-between p-6 text-left"
+                >
+                  <h3 className="font-semibold">{faq.question}</h3>
+                  <span className="ml-4 shrink-0 text-xs text-muted">
+                    {openFaq === i ? "\u25B2" : "\u25BC"}
+                  </span>
+                </button>
+                {openFaq === i && (
+                  <p className="px-6 pb-6 text-sm leading-relaxed text-muted">
+                    {faq.answer}
+                  </p>
+                )}
               </div>
             ))}
           </div>
