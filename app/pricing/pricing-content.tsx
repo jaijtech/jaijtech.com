@@ -42,9 +42,9 @@ const plans: Plan[] = [
     name: "Developer",
     description: "1-3 NIFs",
     monthlyPrice: 19,
-    annualPrice: 17.1,
+    annualPrice: 17.08,
     priceId: "price_1TGauTHpRIgYi6V9SfF1Vcav",
-    annualPriceId: "price_1TGauTHpRIgYi6V9SfF1Vcav",
+    annualPriceId: "price_1TGqw9HpRIgYi6V9CpSMYSrm",
     features: [
       "1 a 3 NIFs",
       "Entorno producción AEAT",
@@ -60,9 +60,9 @@ const plans: Plan[] = [
     name: "Studio",
     description: "4-50 NIFs",
     monthlyPrice: 3,
-    annualPrice: 2.7,
+    annualPrice: 22.5,
     priceId: "price_1TGaxRHpRIgYi6V9vT7tpOpv",
-    annualPriceId: "price_1TGaxRHpRIgYi6V9vT7tpOpv",
+    annualPriceId: "price_1TGr4UHpRIgYi6V9qDdIDrv4",
     priceUnit: "/NIF/mes",
     minPrice: "Mín. 25\u00A0\u20AC/mes",
     features: [
@@ -80,9 +80,9 @@ const plans: Plan[] = [
     name: "Scale",
     description: "51-500 NIFs",
     monthlyPrice: 2,
-    annualPrice: 1.8,
+    annualPrice: 36,
     priceId: "price_1TGazYHpRIgYi6V96F3Ygzyt",
-    annualPriceId: "price_1TGazYHpRIgYi6V96F3Ygzyt",
+    annualPriceId: "price_1TGrBPHpRIgYi6V99rHvHRYv",
     priceUnit: "/NIF/mes",
     minPrice: "Mín. 25\u00A0\u20AC/mes",
     features: [
@@ -244,7 +244,7 @@ export default function PricingContent() {
                       &euro;
                     </span>
                     <span className="text-sm text-muted">
-                      {plan.priceUnit || "/mes"}
+                      {annual && plan.priceUnit ? "/mes" : plan.priceUnit || "/mes"}
                     </span>
                   </>
                 )}
