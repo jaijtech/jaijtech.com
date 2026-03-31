@@ -289,6 +289,139 @@ export default function PricingContent() {
         </div>
       </section>
 
+      {/* Consultoría */}
+      <section className="border-t border-border">
+        <div className="mx-auto max-w-3xl px-6 py-24">
+          <h2 className="text-center text-3xl font-bold tracking-tight">
+            ¿Necesitas ayuda con la integración?
+          </h2>
+          <p className="mt-4 text-center text-muted">
+            Consultoría técnica especializada en la integración de Verifactu en
+            tu stack. Experiencia en Java, Spring, Node.js y los principales
+            frameworks y ERPs del mercado español. Disponible para cualquier
+            plan.
+          </p>
+          <div className="mt-12 space-y-4">
+            <div className="flex items-center justify-between rounded-xl border border-border bg-surface p-5">
+              <div>
+                <p className="font-semibold">Primera semana de análisis</p>
+                <p className="mt-1 text-xs text-muted">Obligatoria</p>
+              </div>
+              <span className="text-lg font-bold">
+                3.000&euro; <span className="text-sm font-normal text-muted">+ IVA</span>
+              </span>
+            </div>
+            <div className="flex items-center justify-between rounded-xl border border-border bg-surface p-5">
+              <div>
+                <p className="font-semibold">Bloques adicionales de 8h</p>
+              </div>
+              <span className="text-lg font-bold">
+                1.000&euro; <span className="text-sm font-normal text-muted">+ IVA</span>
+              </span>
+            </div>
+            <p className="text-center text-xs text-muted">
+              Sin horas sueltas &middot; Sin reembolsos
+            </p>
+          </div>
+          <div className="mt-10 text-center">
+            <Link
+              href="/support"
+              className="inline-block rounded-lg bg-accent px-8 py-3 text-base font-medium text-white transition-colors hover:bg-accent/90"
+            >
+              Solicitar consultoría
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Java Adapter */}
+      <section className="border-t border-border bg-surface">
+        <div className="mx-auto max-w-3xl px-6 py-24">
+          <h2 className="text-center text-3xl font-bold tracking-tight">
+            Adapter Java oficial
+          </h2>
+          <p className="mt-4 text-center text-muted">
+            Integra Verifactu en tu plataforma Java sin tocar Node.js. SDK
+            Maven/Gradle + microservicio bridge Docker que expone una API REST
+            limpia. Tu equipo Java solo ve un jar y llamadas HTTP.
+          </p>
+          <ul className="mt-10 space-y-4">
+            <li className="flex items-start gap-3 text-sm">
+              <span className="mt-0.5 text-accent">&#10003;</span>
+              <span className="text-muted">
+                Tipos Java nativos (BigDecimal, LocalDate, boolean) convertidos
+                automáticamente al formato AEAT
+              </span>
+            </li>
+            <li className="flex items-start gap-3 text-sm">
+              <span className="mt-0.5 text-accent">&#10003;</span>
+              <span className="text-muted">
+                XML canónico y namespaces garantizados — sin rechazos por
+                formato
+              </span>
+            </li>
+            <li className="flex items-start gap-3 text-sm">
+              <span className="mt-0.5 text-accent">&#10003;</span>
+              <span className="text-muted">
+                Errores accionables en lugar de SoapFault opacos
+              </span>
+            </li>
+          </ul>
+          <div className="mt-12 overflow-hidden rounded-xl border border-border">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-border bg-background">
+                  <th className="px-5 py-3 text-left font-semibold">Plan</th>
+                  <th className="px-5 py-3 text-right font-semibold">
+                    Java Adapter
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-border">
+                  <td className="px-5 py-3 text-muted">Sandbox</td>
+                  <td className="px-5 py-3 text-right text-muted">
+                    No disponible
+                  </td>
+                </tr>
+                <tr className="border-b border-border">
+                  <td className="px-5 py-3 text-muted">Developer</td>
+                  <td className="px-5 py-3 text-right font-medium">
+                    +19&euro;/mes
+                  </td>
+                </tr>
+                <tr className="border-b border-border">
+                  <td className="px-5 py-3 text-muted">Studio</td>
+                  <td className="px-5 py-3 text-right font-medium">
+                    +19&euro;/mes
+                  </td>
+                </tr>
+                <tr className="border-b border-border">
+                  <td className="px-5 py-3 text-muted">Scale</td>
+                  <td className="px-5 py-3 text-right font-medium text-accent">
+                    Incluido
+                  </td>
+                </tr>
+                <tr>
+                  <td className="px-5 py-3 text-muted">Enterprise</td>
+                  <td className="px-5 py-3 text-right font-medium text-accent">
+                    Incluido
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div className="mt-10 text-center">
+            <Link
+              href="/register"
+              className="inline-block rounded-lg bg-accent px-8 py-3 text-base font-medium text-white transition-colors hover:bg-accent/90"
+            >
+              Solicitar acceso
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="border-t border-border bg-surface">
         <div className="mx-auto max-w-3xl px-6 py-24">
