@@ -221,7 +221,7 @@ export default function PricingContent() {
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`relative rounded-xl p-6 ${
+              className={`relative flex flex-col rounded-xl p-6 ${
                 plan.highlighted
                   ? "border-2 border-accent bg-surface"
                   : "border border-border bg-surface"
@@ -262,30 +262,32 @@ export default function PricingContent() {
                   </li>
                 ))}
               </ul>
-              {plan.ctaHref ? (
-                <Link
-                  href={plan.ctaHref}
-                  className={`mt-8 block rounded-lg px-4 py-2.5 text-center text-sm font-medium transition-colors ${
-                    plan.highlighted
-                      ? "bg-accent text-white hover:bg-accent/90"
-                      : "border border-border hover:bg-surface-bright"
-                  }`}
-                >
-                  {plan.cta}
-                </Link>
-              ) : (
-                <button
-                  onClick={() => handleCheckout(plan)}
-                  disabled={loadingPlan === plan.name}
-                  className={`mt-8 w-full cursor-pointer rounded-lg px-4 py-2.5 text-center text-sm font-medium transition-colors disabled:opacity-50 ${
-                    plan.highlighted
-                      ? "bg-accent text-white hover:bg-accent/90"
-                      : "border border-border hover:bg-surface-bright"
-                  }`}
-                >
-                  {loadingPlan === plan.name ? "Redirigiendo..." : plan.cta}
-                </button>
-              )}
+              <div className="mt-auto pt-8">
+                {plan.ctaHref ? (
+                  <Link
+                    href={plan.ctaHref}
+                    className={`block rounded-lg px-4 py-2.5 text-center text-sm font-medium transition-colors ${
+                      plan.highlighted
+                        ? "bg-accent text-white hover:bg-accent/90"
+                        : "border border-border hover:bg-surface-bright"
+                    }`}
+                  >
+                    {plan.cta}
+                  </Link>
+                ) : (
+                  <button
+                    onClick={() => handleCheckout(plan)}
+                    disabled={loadingPlan === plan.name}
+                    className={`w-full cursor-pointer rounded-lg px-4 py-2.5 text-center text-sm font-medium transition-colors disabled:opacity-50 ${
+                      plan.highlighted
+                        ? "bg-accent text-white hover:bg-accent/90"
+                        : "border border-border hover:bg-surface-bright"
+                    }`}
+                  >
+                    {loadingPlan === plan.name ? "Redirigiendo..." : plan.cta}
+                  </button>
+                )}
+              </div>
             </div>
           ))}
         </div>
