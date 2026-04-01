@@ -1,12 +1,12 @@
 import { NextRequest } from "next/server";
 import { Resend } from "resend";
-import { getClientIp, rateLimit } from "@/lib/ratelimit";
+import { getClientIp, rateLimit, checkDuplicate, markRegistered } from "@/lib/ratelimit";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: NextRequest) {
   const ip = getClientIp(request);
-  const { limited } = rateLimit(ip, "/api/register", 3, 10 * 60 * 1000);
+  const { limited } = await rateLimit(ip, "/api/register", 3, 10 * 60 * 1000);
   if (limited) {
     return Response.json(
       { error: "Demasiados intentos. Espera 10 minutos antes de volver a intentarlo." },
@@ -21,6 +21,14 @@ export async function POST(request: NextRequest) {
       { error: "Nombre y email son obligatorios" },
       { status: 400 },
     );
+  }
+
+  const isDuplicate = await checkDuplicate(email);
+  if (isDuplicate) {
+    return Response.json({
+      success: true,
+      message: "Ya hemos recibido tu solicitud. Te avisaremos pronto.",
+    });
   }
 
   const now = new Date().toLocaleString("es-ES", {
@@ -67,6 +75,8 @@ export async function POST(request: NextRequest) {
       </div>
     `,
   });
+
+  await markRegistered(email);
 
   return Response.json({ success: true });
 }
