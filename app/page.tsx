@@ -109,7 +109,7 @@ export default function Home() {
               <img
                 src="/images/Verifactu-logo.png"
                 alt=""
-                className="h-4 w-auto"
+                className="h-8 w-auto"
               />
               <span>SDK Verifactu local-first</span>
             </div>

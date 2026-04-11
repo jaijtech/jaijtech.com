@@ -40,9 +40,9 @@ function Header() {
         <Link href="/" className="flex items-center gap-2.5">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/Verifactu-logo.png"
-            alt="Verifactu"
-            className="h-7 w-auto"
+            src="/images/jaijtech-logo2.png"
+            alt="JaijTech"
+            className="h-8 w-auto"
           />
           <span className="text-lg font-bold tracking-tight">JaijTech</span>
         </Link>
@@ -103,14 +103,6 @@ function Footer() {
               className="transition-colors hover:text-foreground"
             >
               Documentación
-            </a>
-            <a
-              href="https://github.com/jaijtech"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition-colors hover:text-foreground"
-            >
-              GitHub
             </a>
             <Link
               href="/contacto"
