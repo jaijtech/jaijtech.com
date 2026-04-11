@@ -78,24 +78,24 @@ export default function Home() {
               </span>
             </h1>
             <p className="mt-8 max-w-2xl text-lg leading-relaxed text-muted md:text-xl">
-              SDK Verifactu local-first para fabricantes de software. Tu
-              certificado, tu servidor, tu control.
+              SDK Verifactu local-first para fabricantes de ERP, TPV y software
+              de gestión en España. Tu certificado, tu servidor, tu control.
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+              <Link
+                href="/contacto"
+                className="rounded-lg bg-accent px-8 py-3 text-base font-medium text-white transition-colors hover:bg-accent/90"
+              >
+                Hablar con nosotros
+              </Link>
               <a
                 href="https://docs.jaijtech.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-lg bg-accent px-8 py-3 text-base font-medium text-white transition-colors hover:bg-accent/90"
+                className="rounded-lg border border-border bg-surface px-8 py-3 text-base font-medium text-foreground transition-colors hover:bg-surface-bright"
               >
                 Ver documentación
               </a>
-              <Link
-                href="/contacto"
-                className="rounded-lg border border-border bg-surface px-8 py-3 text-base font-medium text-foreground transition-colors hover:bg-surface-bright"
-              >
-                Hablar con nosotros
-              </Link>
             </div>
           </div>
         </div>
@@ -167,6 +167,14 @@ export default function Home() {
             </div>
           ))}
         </div>
+        <div className="mt-12 text-center">
+          <Link
+            href="/contacto"
+            className="inline-block rounded-lg bg-accent px-8 py-3 text-base font-medium text-white transition-colors hover:bg-accent/90"
+          >
+            Hablar con nosotros
+          </Link>
+        </div>
       </section>
 
       {/* Diferenciadores */}
@@ -210,6 +218,14 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <div className="mt-12 text-center">
+            <Link
+              href="/contacto"
+              className="inline-block rounded-lg bg-accent px-8 py-3 text-base font-medium text-white transition-colors hover:bg-accent/90"
+            >
+              Hablar con nosotros
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -233,6 +249,14 @@ export default function Home() {
             <span className="font-medium text-foreground">Crea y Crece</span>{" "}
             (Ley 18/2022) — factura electrónica B2B obligatoria
           </p>
+          <div className="mt-10">
+            <Link
+              href="/contacto"
+              className="inline-block rounded-lg border border-border bg-background px-8 py-3 text-base font-medium text-foreground transition-colors hover:bg-surface-bright"
+            >
+              Quiero estar en la beta de Crea y Crece
+            </Link>
+          </div>
         </div>
       </section>
     </>
