@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
 import "./globals.css";
@@ -39,13 +38,11 @@ function Header() {
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-sm">
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         <Link href="/" className="flex items-center gap-2.5">
-          <Image
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             src="/images/Verifactu-logo.png"
             alt="Verifactu"
-            width={120}
-            height={36}
             className="h-7 w-auto"
-            priority
           />
           <span className="text-lg font-bold tracking-tight">JaijTech</span>
         </Link>
@@ -88,11 +85,10 @@ function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-12">
         <div className="flex flex-col items-center gap-6 md:flex-row md:items-start md:justify-between">
           <div className="flex items-center gap-2.5">
-            <Image
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
               src="/images/Verifactu-logo.png"
               alt="Verifactu"
-              width={120}
-              height={36}
               className="h-6 w-auto"
             />
             <span className="text-base font-semibold tracking-tight">
