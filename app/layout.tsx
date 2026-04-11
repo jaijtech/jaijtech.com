@@ -35,16 +35,15 @@ export const metadata: Metadata = {
 
 function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-sm">
+    <header className="sticky top-0 z-50 border-b border-border bg-[#2D3748]">
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-        <Link href="/" className="flex items-center gap-2.5">
+        <Link href="/" className="flex items-center">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/jaijtech-logo2.png"
+            src="/images/jaijtech-logo1.png"
             alt="JaijTech"
-            className="h-8 w-auto"
+            className="h-9 w-auto"
           />
-          <span className="text-lg font-bold tracking-tight">JaijTech</span>
         </Link>
         <div className="hidden items-center gap-7 md:flex">
           <Link

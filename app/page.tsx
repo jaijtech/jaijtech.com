@@ -104,14 +104,13 @@ export default function Home() {
         </div>
         <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
           <div className="flex flex-col items-center text-center">
-            <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-1.5 text-xs text-muted">
+            <div className="mb-8 inline-flex items-center rounded-full border border-border bg-surface p-3">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/Verifactu-logo.png"
-                alt=""
-                className="h-8 w-auto"
+                alt="Verifactu"
+                className="h-10 w-auto"
               />
-              <span>SDK Verifactu local-first</span>
             </div>
             <h1 className="max-w-4xl text-4xl font-bold leading-tight tracking-tight md:text-6xl lg:text-7xl">
               Confidencialidad total.{" "}
