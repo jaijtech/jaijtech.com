@@ -111,10 +111,10 @@ function Footer() {
               Contacto
             </Link>
             <a
-              href="mailto:legal@jaijtech.com"
+              href="mailto:info@jaijtech.com"
               className="transition-colors hover:text-foreground"
             >
-              legal@jaijtech.com
+              info@jaijtech.com
             </a>
             <Link
               href="/terms"
