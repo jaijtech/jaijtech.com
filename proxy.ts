@@ -179,7 +179,7 @@ export const config = {
 
 export function proxy(request: NextRequest) {
   if (request.nextUrl.pathname === "/") {
-    return NextResponse.redirect(new URL("/register", request.url), 302);
+    return NextResponse.next();
   }
 
   return new NextResponse(html, {
