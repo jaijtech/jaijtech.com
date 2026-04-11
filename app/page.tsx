@@ -52,46 +52,6 @@ const differentiators = [
   },
 ];
 
-const pricingTiers = [
-  {
-    name: "Sandbox",
-    price: "Gratis",
-    unit: "",
-    description: "Sin límite técnico. Sin tarjeta.",
-    cta: "Empezar gratis",
-    href: "/register",
-    highlighted: false,
-  },
-  {
-    name: "Developer",
-    price: "19€",
-    unit: "/mes",
-    description: "1-3 NIFs. Producción AEAT.",
-    cta: "Suscribirse",
-    href: "/pricing",
-    highlighted: true,
-  },
-  {
-    name: "Studio",
-    price: "3€",
-    unit: "/NIF/mes",
-    minPrice: "Mín. 25€/mes",
-    description: "4-50 NIFs. Multi-NIF dashboard.",
-    cta: "Suscribirse",
-    href: "/pricing",
-    highlighted: false,
-  },
-  {
-    name: "Enterprise",
-    price: "Contacto",
-    unit: "",
-    description: "50+ NIFs. SLA personalizado.",
-    cta: "Hablar con ventas",
-    href: "/contacto",
-    highlighted: false,
-  },
-];
-
 export default function Home() {
   return (
     <>
@@ -253,78 +213,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Pricing */}
-      <section className="mx-auto max-w-6xl px-6 py-24">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-            Pricing
-          </h2>
-          <p className="mt-4 text-lg text-muted">
-            Empieza gratis. Escala cuando lo necesites.
-          </p>
-        </div>
-        <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {pricingTiers.map((t) => (
-            <div
-              key={t.name}
-              className={`relative flex flex-col rounded-xl p-6 ${
-                t.highlighted
-                  ? "border-2 border-accent bg-surface"
-                  : "border border-border bg-surface"
-              }`}
-            >
-              {t.highlighted && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-accent px-3 py-1 text-xs font-medium text-white">
-                  Popular
-                </span>
-              )}
-              <h3 className="text-lg font-semibold">{t.name}</h3>
-              <div className="mt-4">
-                <span className="text-3xl font-bold">{t.price}</span>
-                {t.unit && <span className="text-muted">{t.unit}</span>}
-              </div>
-              {"minPrice" in t && t.minPrice && (
-                <p className="mt-1 text-xs text-muted">{t.minPrice}</p>
-              )}
-              <p className="mt-3 text-sm text-muted">{t.description}</p>
-              <Link
-                href={t.href}
-                className={`mt-auto block rounded-lg px-4 py-2.5 text-center text-sm font-medium transition-colors ${
-                  t.highlighted
-                    ? "bg-accent text-white hover:bg-accent/90"
-                    : "border border-border hover:bg-surface-bright"
-                } mt-8`}
-              >
-                {t.cta}
-              </Link>
-            </div>
-          ))}
-        </div>
-        <div className="mt-12 rounded-xl border border-border bg-surface p-8 text-center">
-          <p className="text-lg">
-            ¿Más de 50 NIFs?{" "}
-            <span className="text-accent">Hablemos.</span>
-          </p>
-          <p className="mt-2 text-sm text-muted">
-            Diseñamos un plan a medida para tu volumen e infraestructura.
-          </p>
-          <Link
-            href="/contacto"
-            className="mt-6 inline-block rounded-lg bg-accent px-8 py-3 text-sm font-medium text-white transition-colors hover:bg-accent/90"
-          >
-            Contactar
-          </Link>
-        </div>
-        <div className="mt-8 text-center">
-          <Link
-            href="/pricing"
-            className="text-sm text-accent hover:underline"
-          >
-            Ver todos los planes &rarr;
-          </Link>
-        </div>
-      </section>
-
       {/* Muy pronto también */}
       <section className="border-t border-border bg-surface">
         <div className="mx-auto max-w-4xl px-6 py-24 text-center">
@@ -345,12 +233,6 @@ export default function Home() {
             <span className="font-medium text-foreground">Crea y Crece</span>{" "}
             (Ley 18/2022) — factura electrónica B2B obligatoria
           </p>
-          <Link
-            href="/contacto"
-            className="mt-8 inline-block rounded-lg border border-border bg-background px-8 py-3 text-sm font-medium text-foreground transition-colors hover:bg-surface-bright"
-          >
-            Únete a la lista de espera
-          </Link>
         </div>
       </section>
     </>
