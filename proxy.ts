@@ -173,7 +173,7 @@ const html = `<!DOCTYPE html>
 
 export const config = {
   matcher: [
-    "/((?!api|_next|favicon\\.ico|sitemap\\.xml|robots\\.txt|register|pricing|support|success|terms|privacy).*)",
+    "/((?!api|_next|favicon\\.ico|sitemap\\.xml|robots\\.txt|register|pricing|support|success|terms|privacy|images|icon\\.png).*)",
   ],
 };
 
