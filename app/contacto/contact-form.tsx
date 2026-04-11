@@ -17,6 +17,8 @@ export default function ContactForm() {
       name: formData.get("name") as string,
       email: formData.get("email") as string,
       company: formData.get("company") as string,
+      role: formData.get("role") as string,
+      nifs: formData.get("nifs") as string,
       message: formData.get("message") as string,
     };
 
@@ -94,6 +96,46 @@ export default function ContactForm() {
           placeholder="Mi Empresa S.L. (opcional)"
         />
       </div>
+      <div className="grid gap-5 sm:grid-cols-2">
+        <div>
+          <label htmlFor="role" className="block text-sm font-medium">
+            Rol
+          </label>
+          <select
+            id="role"
+            name="role"
+            defaultValue=""
+            className="mt-1 w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm text-foreground outline-none focus:border-accent focus:ring-1 focus:ring-accent"
+          >
+            <option value="" disabled>
+              Selecciona
+            </option>
+            <option value="CTO">CTO</option>
+            <option value="Developer">Developer</option>
+            <option value="Product Manager">Product Manager</option>
+            <option value="Otro">Otro</option>
+          </select>
+        </div>
+        <div>
+          <label htmlFor="nifs" className="block text-sm font-medium">
+            NIFs estimados
+          </label>
+          <select
+            id="nifs"
+            name="nifs"
+            defaultValue=""
+            className="mt-1 w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm text-foreground outline-none focus:border-accent focus:ring-1 focus:ring-accent"
+          >
+            <option value="" disabled>
+              Selecciona
+            </option>
+            <option value="1-10">1-10</option>
+            <option value="11-50">11-50</option>
+            <option value="51-200">51-200</option>
+            <option value="200+">200+</option>
+          </select>
+        </div>
+      </div>
       <div>
         <label htmlFor="message" className="block text-sm font-medium">
           Mensaje
@@ -115,6 +157,18 @@ export default function ContactForm() {
       >
         {loading ? "Enviando..." : "Enviar mensaje"}
       </button>
+      <p className="text-center text-sm text-muted">
+        Respondemos en menos de 24h laborables
+      </p>
+      <p className="text-center text-sm text-muted">
+        O escríbenos directamente a{" "}
+        <a
+          href="mailto:info@jaijtech.com"
+          className="text-accent hover:underline"
+        >
+          info@jaijtech.com
+        </a>
+      </p>
       <p className="text-center text-xs text-muted">
         Al enviar aceptas la{" "}
         <a href="/privacy" className="text-accent hover:underline">

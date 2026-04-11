@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  const { name, email, company, message } = await request.json();
+  const { name, email, company, role, nifs, message } = await request.json();
 
   if (!name || !email || !message) {
     return Response.json(
@@ -39,6 +39,8 @@ export async function POST(request: NextRequest) {
     name: escapeHtml(String(name)),
     email: escapeHtml(String(email)),
     company: company ? escapeHtml(String(company)) : "",
+    role: role ? escapeHtml(String(role)) : "",
+    nifs: nifs ? escapeHtml(String(nifs)) : "",
     message: escapeHtml(String(message)).replace(/\n/g, "<br />"),
   };
 
@@ -83,6 +85,8 @@ export async function POST(request: NextRequest) {
           <tr><td style="padding: 8px 12px; border: 1px solid #e5e5e5; font-weight: 600;">Nombre</td><td style="padding: 8px 12px; border: 1px solid #e5e5e5;">${safe.name}</td></tr>
           <tr><td style="padding: 8px 12px; border: 1px solid #e5e5e5; font-weight: 600;">Email</td><td style="padding: 8px 12px; border: 1px solid #e5e5e5;"><a href="mailto:${safe.email}">${safe.email}</a></td></tr>
           <tr><td style="padding: 8px 12px; border: 1px solid #e5e5e5; font-weight: 600;">Empresa</td><td style="padding: 8px 12px; border: 1px solid #e5e5e5;">${safe.company || "N/A"}</td></tr>
+          <tr><td style="padding: 8px 12px; border: 1px solid #e5e5e5; font-weight: 600;">Rol</td><td style="padding: 8px 12px; border: 1px solid #e5e5e5;">${safe.role || "N/A"}</td></tr>
+          <tr><td style="padding: 8px 12px; border: 1px solid #e5e5e5; font-weight: 600;">NIFs estimados</td><td style="padding: 8px 12px; border: 1px solid #e5e5e5;">${safe.nifs || "N/A"}</td></tr>
           <tr><td style="padding: 8px 12px; border: 1px solid #e5e5e5; font-weight: 600;">Fecha</td><td style="padding: 8px 12px; border: 1px solid #e5e5e5;">${now}</td></tr>
         </table>
         <h3 style="margin-top: 24px;">Mensaje</h3>

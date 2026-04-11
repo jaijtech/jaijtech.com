@@ -22,15 +22,6 @@ export default function ContactoPage() {
       <div className="mt-12 rounded-xl border border-border bg-surface p-8">
         <ContactForm />
       </div>
-      <p className="mt-6 text-center text-sm text-muted">
-        ¿Prefieres email directo?{" "}
-        <a
-          href="mailto:legal@jaijtech.com"
-          className="text-accent hover:underline"
-        >
-          legal@jaijtech.com
-        </a>
-      </p>
     </section>
   );
 }

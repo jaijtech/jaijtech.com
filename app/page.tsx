@@ -33,6 +33,21 @@ const steps = [
   },
 ];
 
+const regulations = [
+  {
+    title: "Ley Antifraude + RD 1007/2023",
+    body: "El reglamento que obliga a los SIF a encadenar y firmar cada registro de facturación.",
+  },
+  {
+    title: "Orden HAC/1177/2024",
+    body: "Las especificaciones técnicas exactas que debe cumplir tu software para emitir facturas Verifactu.",
+  },
+  {
+    title: "Crea y Crece — Ley 18/2022",
+    body: "La obligación de factura electrónica B2B que afecta a todos los fabricantes de software de gestión en España.",
+  },
+];
+
 const differentiators = [
   {
     title: "Tus datos son tuyos",
@@ -226,6 +241,55 @@ export default function Home() {
               Hablar con nosotros
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Normativa siempre cubierta */}
+      <section className="mx-auto max-w-6xl px-6 py-24">
+        <div className="text-center">
+          <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+            Normativa siempre cubierta
+          </h2>
+        </div>
+        <div className="mt-16 grid gap-6 md:grid-cols-3">
+          {regulations.map((r) => (
+            <div
+              key={r.title}
+              className="rounded-xl border border-border bg-surface p-6"
+            >
+              <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10 text-accent">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                  <polyline points="14 2 14 8 20 8" />
+                  <line x1="16" y1="13" x2="8" y2="13" />
+                  <line x1="16" y1="17" x2="8" y2="17" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-semibold">{r.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted">
+                {r.body}
+              </p>
+            </div>
+          ))}
+        </div>
+        <div className="mt-12 text-center">
+          <p className="mx-auto max-w-2xl text-base text-muted">
+            Monitorizamos la documentación oficial de la AEAT 24/7. Cualquier
+            cambio normativo se aplica en el SDK antes de que afecte a tus
+            clientes.
+          </p>
+          <span className="mt-6 inline-block rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-xs font-medium text-accent">
+            En beta privada con fabricantes de ERP en España
+          </span>
         </div>
       </section>
 

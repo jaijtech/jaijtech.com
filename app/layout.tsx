@@ -16,11 +16,12 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "JaijTech — SDK Verifactu local-first",
+    default:
+      "SDK Verifactu local-first para fabricantes de ERP en España | JaijTech",
     template: "%s | JaijTech",
   },
   description:
-    "SDK Verifactu local-first para fabricantes de software. Tu certificado, tu servidor, tu control. Los datos de tus clientes nunca salen de tu infraestructura.",
+    "SDK Verifactu local-first para fabricantes de ERP, TPV y software de gestión en España. Tu certificado, tu servidor, tu control. Datos fiscales que nunca salen de tu infraestructura.",
   metadataBase: new URL("https://jaijtech.com"),
   openGraph: {
     type: "website",
