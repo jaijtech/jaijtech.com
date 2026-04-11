@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import RegisterForm from "./register-form";
 
 export const metadata: Metadata = {
-  title: "Acceso anticipado",
+  title: "Crear cuenta Sandbox",
   description:
-    "Solicita acceso anticipado al SDK @jaijtech/verifactu. Sé de los primeros en integrar Verifactu.",
+    "Crea tu cuenta gratuita en el Sandbox de @jaijtech/verifactu. Entorno de pruebas AEAT. Sin tarjeta de crédito. Sin límite técnico.",
 };
 
 export default function RegisterPage() {
