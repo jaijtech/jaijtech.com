@@ -28,9 +28,10 @@ export const metadata: Metadata = {
     locale: "es_ES",
     url: "https://jaijtech.com",
     siteName: "JaijTech",
-    title: "JaijTech — SDK Verifactu local-first",
+    title:
+      "SDK Verifactu local-first para fabricantes de ERP en España | JaijTech",
     description:
-      "SDK Verifactu local-first para fabricantes de software. Tu certificado, tu servidor, tu control.",
+      "SDK Verifactu local-first para fabricantes de ERP, TPV y software de gestión en España. Tu certificado, tu servidor, tu control. Datos fiscales que nunca salen de tu infraestructura.",
   },
 };
 
