@@ -141,7 +141,6 @@ function formatPrice(price: number): string {
 export default function PricingContent() {
   const [annual, setAnnual] = useState(false);
   const [loadingPlan, setLoadingPlan] = useState<string | null>(null);
-  const [pricingOpen, setPricingOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   async function handleCheckout(plan: Plan) {
@@ -282,51 +281,16 @@ export default function PricingContent() {
             ¿Necesitas ayuda con la integración?
           </h2>
           <p className="mt-4 text-center text-muted">
-            Consultoría técnica especializada en la integración de Verifactu.
-            Especialistas en ecosistemas Java y los principales frameworks.
-            Disponible para cualquier plan.
+            Consultoría técnica a medida para equipos que quieren acelerar la
+            integración de Verifactu en su ERP. Contacta con nosotros y
+            valoramos tu caso.
           </p>
-          <div className="mt-12">
-            <button
-              onClick={() => setPricingOpen(!pricingOpen)}
-              className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl border border-border bg-surface px-5 py-4 text-sm font-medium transition-colors hover:bg-surface-bright"
-            >
-              Ver listado de precios
-              <span className="text-xs text-muted">
-                {pricingOpen ? "\u25B2" : "\u25BC"}
-              </span>
-            </button>
-            {pricingOpen && (
-              <div className="mt-4 space-y-4">
-                <div className="flex items-center justify-between rounded-xl border border-border bg-surface p-5">
-                  <div>
-                    <p className="font-semibold">Primera semana de análisis</p>
-                    <p className="mt-1 text-xs text-muted">Obligatoria</p>
-                  </div>
-                  <span className="text-lg font-bold">
-                    3.000&euro; <span className="text-sm font-normal text-muted">+ IVA</span>
-                  </span>
-                </div>
-                <div className="flex items-center justify-between rounded-xl border border-border bg-surface p-5">
-                  <div>
-                    <p className="font-semibold">Bloques adicionales de 8h</p>
-                  </div>
-                  <span className="text-lg font-bold">
-                    1.000&euro; <span className="text-sm font-normal text-muted">+ IVA</span>
-                  </span>
-                </div>
-                <p className="text-center text-xs text-muted">
-                  Precios exclusivos para las primeras integraciones
-                </p>
-              </div>
-            )}
-          </div>
           <div className="mt-10 text-center">
             <Link
-              href="/support"
+              href="/contacto"
               className="inline-block rounded-lg bg-accent px-8 py-3 text-base font-medium text-white transition-colors hover:bg-accent/90"
             >
-              Solicitar consultoría
+              Contactar
             </Link>
           </div>
         </div>
