@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
 import "./globals.css";
@@ -16,20 +17,20 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "jaijtech — SDK Verifactu para facturación electrónica",
-    template: "%s | jaijtech",
+    default: "JaijTech — SDK Verifactu local-first",
+    template: "%s | JaijTech",
   },
   description:
-    "SDK TypeScript para Verifactu AEAT. Facturación electrónica española con firma XAdES-EPES, SHA-256, QR normativo y soporte completo del Anexo II.",
+    "SDK Verifactu local-first para fabricantes de software. Tu certificado, tu servidor, tu control. Los datos de tus clientes nunca salen de tu infraestructura.",
   metadataBase: new URL("https://jaijtech.com"),
   openGraph: {
     type: "website",
     locale: "es_ES",
     url: "https://jaijtech.com",
-    siteName: "jaijtech",
-    title: "jaijtech — SDK Verifactu para facturación electrónica",
+    siteName: "JaijTech",
+    title: "JaijTech — SDK Verifactu local-first",
     description:
-      "SDK TypeScript para Verifactu AEAT. Facturación electrónica española.",
+      "SDK Verifactu local-first para fabricantes de software. Tu certificado, tu servidor, tu control.",
   },
 };
 
@@ -37,27 +38,43 @@ function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-sm">
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-        <Link href="/" className="text-xl font-bold tracking-tight">
-          j<span className="text-accent">ai</span>jtech
+        <Link href="/" className="flex items-center gap-2.5">
+          <Image
+            src="/images/Verifactu-logo.png"
+            alt="Verifactu"
+            width={120}
+            height={36}
+            className="h-7 w-auto"
+            priority
+          />
+          <span className="text-lg font-bold tracking-tight">JaijTech</span>
         </Link>
-        <div className="hidden items-center gap-6 sm:flex">
+        <div className="hidden items-center gap-7 md:flex">
+          <Link
+            href="/#producto"
+            className="text-sm text-muted transition-colors hover:text-foreground"
+          >
+            Producto
+          </Link>
           <Link
             href="/pricing"
             className="text-sm text-muted transition-colors hover:text-foreground"
           >
-            Precios
+            Pricing
           </Link>
-          <span className="cursor-not-allowed text-sm text-muted/50">
-            Soporte
-          </span>
-          <span className="cursor-not-allowed text-sm text-muted/50">
-            Docs
-          </span>
+          <a
+            href="https://docs.jaijtech.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-muted transition-colors hover:text-foreground"
+          >
+            Documentación
+          </a>
           <Link
-            href="/pricing"
+            href="/contacto"
             className="rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-accent/90"
           >
-            Empezar gratis
+            Contacto
           </Link>
         </div>
       </nav>
@@ -69,22 +86,64 @@ function Footer() {
   return (
     <footer className="border-t border-border bg-surface">
       <div className="mx-auto max-w-6xl px-6 py-12">
-        <div className="flex flex-col items-center gap-4 text-sm text-muted">
-          <div className="flex gap-4">
+        <div className="flex flex-col items-center gap-6 md:flex-row md:items-start md:justify-between">
+          <div className="flex items-center gap-2.5">
+            <Image
+              src="/images/Verifactu-logo.png"
+              alt="Verifactu"
+              width={120}
+              height={36}
+              className="h-6 w-auto"
+            />
+            <span className="text-base font-semibold tracking-tight">
+              JaijTech
+            </span>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-muted">
+            <a
+              href="https://docs.jaijtech.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-foreground"
+            >
+              Documentación
+            </a>
+            <a
+              href="https://github.com/jaijtech"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-foreground"
+            >
+              GitHub
+            </a>
+            <Link
+              href="/contacto"
+              className="transition-colors hover:text-foreground"
+            >
+              Contacto
+            </Link>
+            <a
+              href="mailto:legal@jaijtech.com"
+              className="transition-colors hover:text-foreground"
+            >
+              legal@jaijtech.com
+            </a>
             <Link
               href="/terms"
               className="transition-colors hover:text-foreground"
             >
-              Términos de servicio
+              Términos
             </Link>
             <Link
               href="/privacy"
               className="transition-colors hover:text-foreground"
             >
-              Política de privacidad
+              Privacidad
             </Link>
           </div>
-          <div>&copy; 2026 jaijtech. Todos los derechos reservados.</div>
+        </div>
+        <div className="mt-8 border-t border-border pt-6 text-center text-xs text-muted">
+          &copy; 2026 JaijTech
         </div>
       </div>
     </footer>
