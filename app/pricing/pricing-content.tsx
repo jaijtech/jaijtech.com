@@ -199,7 +199,7 @@ export default function PricingContent() {
           </div>
         </div>
 
-        <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {plans.map((plan) => (
             <div
               key={plan.name}
@@ -382,11 +382,15 @@ export default function PricingContent() {
             </table>
           </div>
           <div className="mt-10 text-center">
+            <p className="text-base text-muted">
+              ¿Listo para integrar Verifactu en tu ERP? Empieza gratis con el
+              Sandbox
+            </p>
             <Link
               href="/register"
-              className="inline-block rounded-lg bg-accent px-8 py-3 text-base font-medium text-white transition-colors hover:bg-accent/90"
+              className="mt-6 inline-block rounded-lg bg-accent px-8 py-3 text-base font-medium text-white transition-colors hover:bg-accent/90"
             >
-              Solicitar acceso
+              Empezar gratis
             </Link>
           </div>
         </div>
