@@ -29,10 +29,10 @@ const plans: Plan[] = [
     priceId: null,
     annualPriceId: null,
     features: [
-      "Sin límite técnico",
-      "Sin tarjeta de crédito",
       "Entorno de pruebas AEAT",
-      "Soporte comunidad",
+      "Sin API key",
+      "Sin soporte",
+      "Adapters: solo ejemplos de código, sin soporte ni garantías",
     ],
     cta: "Empezar gratis",
     ctaHref: "/register",
@@ -47,6 +47,7 @@ const plans: Plan[] = [
     annualPriceId: "price_1TGqw9HpRIgYi6V9CpSMYSrm",
     features: [
       "1 a 3 NIFs",
+      "1 adapter oficial a elegir (Java, .NET, PHP o Python)",
       "Entorno producción AEAT",
       "Firma XAdES-EPES",
       "Soporte por email",
@@ -68,7 +69,7 @@ const plans: Plan[] = [
     features: [
       "4 a 50 NIFs",
       "Todo lo de Developer",
-      "Dashboard multi-NIF",
+      "Todos los adapters oficiales incluidos",
       "Soporte prioritario",
       "SLA 99,9%",
     ],
@@ -77,40 +78,21 @@ const plans: Plan[] = [
     highlighted: false,
   },
   {
-    name: "Scale",
-    description: "51-500 NIFs",
-    monthlyPrice: 2,
-    annualPrice: 36,
-    priceId: "price_1TGazYHpRIgYi6V96F3Ygzyt",
-    annualPriceId: "price_1TGrBPHpRIgYi6V99rHvHRYv",
-    priceUnit: "/NIF/mes",
-    minPrice: "Mín. 25\u00A0\u20AC/mes",
-    features: [
-      "51 a 500 NIFs",
-      "Todo lo de Studio",
-      "API rate limits ampliados",
-      "Soporte dedicado",
-      "Onboarding personalizado",
-    ],
-    cta: "Suscribirse",
-    ctaHref: null,
-    highlighted: false,
-  },
-  {
     name: "Enterprise",
-    description: "500+ NIFs",
+    description: "50+ NIFs",
     monthlyPrice: null,
     annualPrice: null,
     priceLabel: "A medida",
     priceId: null,
     annualPriceId: null,
     features: [
-      "500+ NIFs",
-      "Todo lo de Scale",
-      "Infraestructura dedicada",
-      "Account manager",
-      "SLA personalizado",
+      "50+ NIFs",
+      "Todo lo de Studio",
+      "Todos los adapters oficiales incluidos",
+      "Soporte dedicado",
+      "SLA negociado",
       "Integración on-premise",
+      "Account manager",
     ],
     cta: "Contactar",
     ctaHref: "/support",
@@ -137,7 +119,7 @@ const faqs = [
   {
     question: "¿Qué incluye el soporte?",
     answer:
-      "Sandbox incluye soporte comunidad. Developer incluye soporte por email con respuesta en 48h. Studio incluye soporte prioritario con respuesta en 24h. Scale y Enterprise incluyen soporte dedicado.",
+      "Sandbox no incluye soporte, solo acceso al entorno de pruebas. Developer incluye soporte por email con respuesta en 48h. Studio incluye soporte prioritario con respuesta en 24h. Enterprise incluye soporte dedicado.",
   },
   {
     question: "¿Hay descuento anual?",
@@ -350,14 +332,16 @@ export default function PricingContent() {
         </div>
       </section>
 
-      {/* Java Adapter */}
+      {/* Adapters oficiales */}
       <section className="border-t border-border bg-surface">
         <div className="mx-auto max-w-3xl px-6 py-24">
           <h2 className="text-center text-3xl font-bold tracking-tight">
-            Adapter Java oficial
+            Adapters oficiales
           </h2>
           <p className="mt-4 text-center text-muted">
-            Integra Verifactu en tu plataforma Java.
+            SDK Verifactu local-first para fabricantes de ERP, con adapters
+            oficiales para Java, .NET, PHP y Python incluidos en todos los
+            planes de pago.
           </p>
           <div className="mt-12 overflow-hidden rounded-xl border border-border">
             <table className="w-full text-sm">
@@ -365,7 +349,7 @@ export default function PricingContent() {
                 <tr className="border-b border-border bg-background">
                   <th className="px-5 py-3 text-left font-semibold">Plan</th>
                   <th className="px-5 py-3 text-right font-semibold">
-                    Java Adapter
+                    Adapters
                   </th>
                 </tr>
               </thead>
@@ -373,31 +357,25 @@ export default function PricingContent() {
                 <tr className="border-b border-border">
                   <td className="px-5 py-3 text-muted">Sandbox</td>
                   <td className="px-5 py-3 text-right text-muted">
-                    No disponible
+                    Solo ejemplos de código
                   </td>
                 </tr>
                 <tr className="border-b border-border">
                   <td className="px-5 py-3 text-muted">Developer</td>
-                  <td className="px-5 py-3 text-right font-medium">
-                    +19&euro;/mes
+                  <td className="px-5 py-3 text-right font-medium text-accent">
+                    1 incluido a elegir
                   </td>
                 </tr>
                 <tr className="border-b border-border">
                   <td className="px-5 py-3 text-muted">Studio</td>
-                  <td className="px-5 py-3 text-right font-medium">
-                    +19&euro;/mes
-                  </td>
-                </tr>
-                <tr className="border-b border-border">
-                  <td className="px-5 py-3 text-muted">Scale</td>
                   <td className="px-5 py-3 text-right font-medium text-accent">
-                    Incluido
+                    Todos incluidos
                   </td>
                 </tr>
                 <tr>
                   <td className="px-5 py-3 text-muted">Enterprise</td>
                   <td className="px-5 py-3 text-right font-medium text-accent">
-                    Incluido
+                    Todos incluidos
                   </td>
                 </tr>
               </tbody>

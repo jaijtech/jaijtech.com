@@ -73,8 +73,9 @@ const pricingTiers = [
   },
   {
     name: "Studio",
-    price: "149€",
-    unit: "/mes",
+    price: "3€",
+    unit: "/NIF/mes",
+    minPrice: "Mín. 25€/mes",
     description: "4-50 NIFs. Multi-NIF dashboard.",
     cta: "Suscribirse",
     href: "/pricing",
@@ -282,6 +283,9 @@ export default function Home() {
                 <span className="text-3xl font-bold">{t.price}</span>
                 {t.unit && <span className="text-muted">{t.unit}</span>}
               </div>
+              {"minPrice" in t && t.minPrice && (
+                <p className="mt-1 text-xs text-muted">{t.minPrice}</p>
+              )}
               <p className="mt-3 text-sm text-muted">{t.description}</p>
               <Link
                 href={t.href}
