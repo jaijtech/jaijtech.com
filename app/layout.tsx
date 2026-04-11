@@ -80,20 +80,9 @@ function Header() {
 
 function Footer() {
   return (
-    <footer className="border-t border-border bg-surface">
+    <footer className="border-t border-border bg-[#2D3748]">
       <div className="mx-auto max-w-6xl px-6 py-12">
-        <div className="flex flex-col items-center gap-6 md:flex-row md:items-start md:justify-between">
-          <div className="flex items-center gap-2.5">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/Verifactu-logo.png"
-              alt="Verifactu"
-              className="h-6 w-auto"
-            />
-            <span className="text-base font-semibold tracking-tight">
-              JaijTech
-            </span>
-          </div>
+        <div className="flex flex-col items-center gap-6">
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-muted">
             <a
               href="https://docs.jaijtech.com"
