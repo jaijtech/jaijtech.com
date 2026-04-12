@@ -62,8 +62,8 @@ const plans: Plan[] = [
     description: "4-50 NIFs",
     monthlyPrice: 3,
     annualPrice: 22.5,
-    priceId: "price_1TGaxRHpRIgYi6V9vT7tpOpv",
-    annualPriceId: "price_1TGr4UHpRIgYi6V9qDdIDrv4",
+    priceId: null,
+    annualPriceId: null,
     priceUnit: "/NIF/mes",
     minPrice: "Mín. 25\u00A0\u20AC/mes",
     features: [
@@ -73,8 +73,8 @@ const plans: Plan[] = [
       "Soporte prioritario",
       "SLA 99,9%",
     ],
-    cta: "Suscribirse",
-    ctaHref: null,
+    cta: "Contactar",
+    ctaHref: "/contacto",
     highlighted: false,
   },
   {
