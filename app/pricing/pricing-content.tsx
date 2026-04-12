@@ -21,7 +21,7 @@ interface Plan {
 
 const plans: Plan[] = [
   {
-    name: "Sandbox",
+    name: "Developer",
     description: "Desarrollo y pruebas",
     monthlyPrice: 0,
     annualPrice: 0,
@@ -39,7 +39,7 @@ const plans: Plan[] = [
     highlighted: false,
   },
   {
-    name: "Developer",
+    name: "Starter",
     description: "1-3 NIFs",
     monthlyPrice: 19,
     annualPrice: 17.08,
@@ -68,7 +68,7 @@ const plans: Plan[] = [
     minPrice: "Mín. 25\u00A0\u20AC/mes",
     features: [
       "4 a 50 NIFs",
-      "Todo lo de Developer",
+      "Todo lo de Starter",
       "Todos los adapters oficiales incluidos",
       "Soporte prioritario",
       "SLA 99,9%",
@@ -102,9 +102,9 @@ const plans: Plan[] = [
 
 const faqs = [
   {
-    question: "¿Qué es el plan Sandbox?",
+    question: "¿Qué es el plan Developer?",
     answer:
-      "El plan Sandbox es completamente gratuito y sin límite de tiempo. Incluye acceso al entorno de pruebas de la AEAT para que puedas desarrollar e integrar sin riesgo. No requiere tarjeta de crédito.",
+      "El plan Developer es completamente gratuito y sin límite de tiempo. Incluye acceso al entorno de pruebas de la AEAT para que puedas desarrollar e integrar sin riesgo. No requiere tarjeta de crédito.",
   },
   {
     question: "¿Cómo se cuenta un NIF?",
@@ -119,7 +119,7 @@ const faqs = [
   {
     question: "¿Qué incluye el soporte?",
     answer:
-      "Sandbox no incluye soporte, solo acceso al entorno de pruebas. Developer incluye soporte por email con respuesta en 48h. Studio incluye soporte prioritario con respuesta en 24h. Enterprise incluye soporte dedicado.",
+      "Developer no incluye soporte, solo acceso al entorno de pruebas. Starter incluye soporte por email con respuesta en 48h. Studio incluye soporte prioritario con respuesta en 24h. Enterprise incluye soporte dedicado.",
   },
   {
     question: "¿Hay descuento anual?",
@@ -319,13 +319,13 @@ export default function PricingContent() {
               </thead>
               <tbody>
                 <tr className="border-b border-border">
-                  <td className="px-5 py-3 text-muted">Sandbox</td>
+                  <td className="px-5 py-3 text-muted">Developer</td>
                   <td className="px-5 py-3 text-right text-muted">
                     Solo ejemplos de código
                   </td>
                 </tr>
                 <tr className="border-b border-border">
-                  <td className="px-5 py-3 text-muted">Developer</td>
+                  <td className="px-5 py-3 text-muted">Starter</td>
                   <td className="px-5 py-3 text-right font-medium text-accent">
                     1 incluido a elegir
                   </td>
@@ -348,7 +348,7 @@ export default function PricingContent() {
           <div className="mt-10 text-center">
             <p className="text-base text-muted">
               ¿Listo para integrar Verifactu en tu ERP? Empieza gratis con el
-              Sandbox
+              Developer
             </p>
             <Link
               href="/register"

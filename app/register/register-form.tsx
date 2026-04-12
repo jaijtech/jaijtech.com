@@ -48,7 +48,7 @@ export default function RegisterForm() {
         <div className="rounded-xl border border-border bg-surface p-8">
           <div className="text-4xl text-accent">&#10003;</div>
           <h2 className="mt-4 text-2xl font-bold">
-            ¡Cuenta Sandbox creada!
+            ¡Cuenta Developer creada!
           </h2>
           <p className="mt-4 text-muted">
             Te hemos enviado los detalles de acceso a{" "}
@@ -63,7 +63,7 @@ export default function RegisterForm() {
     <section className="mx-auto max-w-md px-6 py-24">
       <div className="text-center">
         <h1 className="text-3xl font-bold tracking-tight">
-          Empieza gratis con el Sandbox
+          Empieza gratis con el Developer
         </h1>
         <p className="mt-4 text-muted">
           Accede al entorno de pruebas Verifactu. Sin tarjeta de crédito. Sin
@@ -127,7 +127,7 @@ export default function RegisterForm() {
           disabled={loading}
           className="w-full cursor-pointer rounded-lg bg-accent px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-accent/90 disabled:opacity-50"
         >
-          {loading ? "Enviando..." : "Crear cuenta Sandbox"}
+          {loading ? "Enviando..." : "Crear cuenta Developer"}
         </button>
         <p className="text-center text-sm text-muted">
           Gratis para siempre en el entorno de pruebas AEAT.
