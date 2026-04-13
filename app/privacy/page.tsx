@@ -11,7 +11,7 @@ export default function PrivacyPage() {
         Política de privacidad
       </h1>
       <p className="mt-2 text-sm text-muted">
-        Última actualización: 28 de marzo de 2026
+        Última actualización: 13 de abril de 2026
       </p>
 
       <div className="mt-12 space-y-8 text-sm leading-relaxed text-muted">
@@ -49,9 +49,11 @@ export default function PrivacyPage() {
               datos de tarjetas de crédito en nuestros servidores.
             </li>
             <li>
-              <strong className="text-foreground">Datos de uso:</strong>{" "}
-              información técnica sobre el uso del SDK, incluyendo llamadas a la
-              API, errores y métricas de rendimiento.
+              <strong className="text-foreground">Datos de uso:</strong> el SDK
+              opera en modo local-first y no envía datos de uso, métricas ni
+              telemetría a los servidores de jaijtech. Los únicos datos de uso
+              que recopilamos son los accesos a jaijtech.com y las solicitudes
+              de soporte.
             </li>
             <li>
               <strong className="text-foreground">
@@ -133,12 +135,17 @@ export default function PrivacyPage() {
             6. Datos fiscales
           </h2>
           <p>
-            Respecto a los datos fiscales (facturas, NIFs, importes) que envías
-            a través del SDK al sistema Verifactu de la AEAT, jaijtech actúa
-            como encargado del tratamiento. Estos datos se transmiten
-            directamente a la AEAT y no se almacenan en nuestros sistemas más
-            allá del tiempo necesario para completar la transmisión y
-            proporcionar los logs de confirmación.
+            El SDK @jaijtech/verifactu opera en modo local-first. Los datos
+            fiscales (facturas, NIFs, importes, certificados digitales) que el
+            integrador procesa a través del SDK nunca son transmitidos ni
+            almacenados en los servidores de jaijtech. Toda la operativa de
+            firma, encadenamiento y envío a la AEAT se realiza íntegramente en
+            la infraestructura del integrador.
+          </p>
+          <p className="mt-2">
+            El integrador es el único responsable del tratamiento de los datos
+            fiscales de sus clientes finales conforme al RGPD y a la normativa
+            fiscal española.
           </p>
         </div>
 
@@ -195,7 +202,9 @@ export default function PrivacyPage() {
             Implementamos medidas técnicas y organizativas apropiadas para
             proteger tus datos personales, incluyendo cifrado en tránsito
             (TLS), cifrado en reposo, control de accesos y monitorización de
-            seguridad.
+            seguridad. Los datos fiscales procesados por el SDK no están
+            sujetos a estas medidas porque nunca abandonan la infraestructura
+            del integrador.
           </p>
         </div>
 
