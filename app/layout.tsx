@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import Script from "next/script";
+import Header from "./header";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -34,51 +35,6 @@ export const metadata: Metadata = {
       "SDK Verifactu local-first para fabricantes de ERP, TPV y software de gestión en España. Tu certificado, tu servidor, tu control. Datos fiscales que nunca salen de tu infraestructura.",
   },
 };
-
-function Header() {
-  return (
-    <header className="sticky top-0 z-50 border-b border-border bg-[#2D3748]">
-      <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-        <Link href="/" className="flex items-center">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/jaijtech-logo1.png"
-            alt="JaijTech"
-            className="h-9 w-auto"
-          />
-        </Link>
-        <div className="hidden items-center gap-7 md:flex">
-          <Link
-            href="/#producto"
-            className="text-sm text-muted transition-colors hover:text-foreground"
-          >
-            Producto
-          </Link>
-          <Link
-            href="/pricing"
-            className="text-sm text-muted transition-colors hover:text-foreground"
-          >
-            Pricing
-          </Link>
-          <a
-            href="https://docs.jaijtech.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-muted transition-colors hover:text-foreground"
-          >
-            Documentación
-          </a>
-          <Link
-            href="/contacto"
-            className="rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-accent/90"
-          >
-            Contacto
-          </Link>
-        </div>
-      </nav>
-    </header>
-  );
-}
 
 function Footer() {
   return (
