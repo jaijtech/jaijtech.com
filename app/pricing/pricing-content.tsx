@@ -60,12 +60,11 @@ const plans: Plan[] = [
   {
     name: "Studio",
     description: "4-50 NIFs",
-    monthlyPrice: 3,
-    annualPrice: 22.5,
+    monthlyPrice: null,
+    annualPrice: null,
+    priceLabel: "A medida",
     priceId: null,
     annualPriceId: null,
-    priceUnit: "/NIF/mes",
-    minPrice: "Mín. 25\u00A0\u20AC/mes",
     features: [
       "4 a 50 NIFs",
       "Todo lo de Starter",
