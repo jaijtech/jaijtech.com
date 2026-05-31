@@ -4,8 +4,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
-  { href: "/", label: "Producto", anchor: "/#producto" },
-  { href: "/pricing", label: "Pricing" },
+  { href: "/nexus", label: "Nexus", anchor: "/#nexus" },
+  { href: "/developers", label: "Developers" },
+  { href: "/dossier", label: "Dossier" },
 ];
 
 export default function Header() {
@@ -16,7 +17,7 @@ export default function Header() {
     return pathname.startsWith(href);
   }
 
-  const contactActive = pathname.startsWith("/contacto");
+  const pilotActive = pathname.startsWith("/pilot");
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-[#2D3748]">
@@ -52,14 +53,14 @@ export default function Header() {
             Documentación
           </a>
           <Link
-            href="/contacto"
+            href="/pilot"
             className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${
-              contactActive
+              pilotActive
                 ? "bg-accent text-white ring-2 ring-accent/50"
                 : "bg-accent text-white hover:bg-accent/90"
             }`}
           >
-            Contacto
+            Solicitar un piloto
           </Link>
         </div>
       </nav>

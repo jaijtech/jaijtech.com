@@ -18,11 +18,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: {
     default:
-      "SDK Verifactu local-first para fabricantes de ERP en España | JaijTech",
+      "Nexus — Runtime VeriFactu local-first para fabricantes de ERP | JaijTech",
     template: "%s | JaijTech",
   },
   description:
-    "SDK Verifactu local-first para fabricantes de ERP, TPV y software de gestión en España. Tu certificado, tu servidor, tu control. Datos fiscales que nunca salen de tu infraestructura.",
+    "Infraestructura fiscal local-first para fabricantes de ERP, TPV y software de gestión. Integra el runtime VeriFactu de JaijTech: emisión, firma y encadenado dentro de la red de tu cliente. Validado contra la AEAT. Solicita un piloto.",
   metadataBase: new URL("https://jaijtech.com"),
   openGraph: {
     type: "website",
@@ -30,9 +30,9 @@ export const metadata: Metadata = {
     url: "https://jaijtech.com",
     siteName: "JaijTech",
     title:
-      "SDK Verifactu local-first para fabricantes de ERP en España | JaijTech",
+      "Nexus — Runtime VeriFactu local-first para fabricantes de ERP | JaijTech",
     description:
-      "SDK Verifactu local-first para fabricantes de ERP, TPV y software de gestión en España. Tu certificado, tu servidor, tu control. Datos fiscales que nunca salen de tu infraestructura.",
+      "Infraestructura fiscal local-first para fabricantes de ERP, TPV y software de gestión. Integra el runtime VeriFactu de JaijTech: emisión, firma y encadenado dentro de la red de tu cliente. Validado contra la AEAT. Solicita un piloto.",
   },
 };
 

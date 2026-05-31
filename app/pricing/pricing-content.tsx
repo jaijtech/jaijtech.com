@@ -153,7 +153,7 @@ export default function PricingContent() {
 
     const data = await res.json();
     if (data.url) {
-      window.location.href = data.url;
+      window.location.assign(data.url);
     }
 
     setLoadingPlan(null);
