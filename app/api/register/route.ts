@@ -4,6 +4,15 @@ import { getClientIp, rateLimit, checkDuplicate, markRegistered } from "@/lib/ra
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+function escapeHtml(input: string): string {
+  return input
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 export async function POST(request: NextRequest) {
   const ip = getClientIp(request);
   const { limited } = await rateLimit(ip, "/api/register", 3, 10 * 60 * 1000);
@@ -31,6 +40,13 @@ export async function POST(request: NextRequest) {
     });
   }
 
+  const safe = {
+    name: escapeHtml(String(name)),
+    email: escapeHtml(String(email)),
+    company: company ? escapeHtml(String(company)) : "",
+    nif: nif ? escapeHtml(String(nif)) : "",
+  };
+
   const now = new Date().toLocaleString("es-ES", {
     timeZone: "Europe/Madrid",
     dateStyle: "full",
@@ -43,7 +59,7 @@ export async function POST(request: NextRequest) {
     subject: "Cuenta Developer creada — @jaijtech/verifactu",
     html: `
       <div style="font-family: system-ui, -apple-system, sans-serif; max-width: 520px; margin: 0 auto; color: #1a1a1a;">
-        <p style="font-size: 16px;">Hola ${name},</p>
+        <p style="font-size: 16px;">Hola ${safe.name},</p>
         <p>Hemos creado tu cuenta Developer en <strong>@jaijtech/verifactu</strong>.</p>
         <p>En breve recibirás los detalles de acceso al entorno de pruebas AEAT. Gratis para siempre, sin tarjeta de crédito.</p>
         <br />
@@ -66,10 +82,10 @@ export async function POST(request: NextRequest) {
       <div style="font-family: system-ui, -apple-system, sans-serif; color: #1a1a1a;">
         <h2 style="margin-top: 0;">Nuevo registro Developer</h2>
         <table style="border-collapse: collapse; width: 100%; max-width: 480px;">
-          <tr><td style="padding: 8px 12px; border: 1px solid #e5e5e5; font-weight: 600;">Nombre</td><td style="padding: 8px 12px; border: 1px solid #e5e5e5;">${name}</td></tr>
-          <tr><td style="padding: 8px 12px; border: 1px solid #e5e5e5; font-weight: 600;">Email</td><td style="padding: 8px 12px; border: 1px solid #e5e5e5;"><a href="mailto:${email}">${email}</a></td></tr>
-          <tr><td style="padding: 8px 12px; border: 1px solid #e5e5e5; font-weight: 600;">Empresa</td><td style="padding: 8px 12px; border: 1px solid #e5e5e5;">${company || "N/A"}</td></tr>
-          <tr><td style="padding: 8px 12px; border: 1px solid #e5e5e5; font-weight: 600;">NIF/CIF</td><td style="padding: 8px 12px; border: 1px solid #e5e5e5;">${nif || "N/A"}</td></tr>
+          <tr><td style="padding: 8px 12px; border: 1px solid #e5e5e5; font-weight: 600;">Nombre</td><td style="padding: 8px 12px; border: 1px solid #e5e5e5;">${safe.name}</td></tr>
+          <tr><td style="padding: 8px 12px; border: 1px solid #e5e5e5; font-weight: 600;">Email</td><td style="padding: 8px 12px; border: 1px solid #e5e5e5;"><a href="mailto:${safe.email}">${safe.email}</a></td></tr>
+          <tr><td style="padding: 8px 12px; border: 1px solid #e5e5e5; font-weight: 600;">Empresa</td><td style="padding: 8px 12px; border: 1px solid #e5e5e5;">${safe.company || "N/A"}</td></tr>
+          <tr><td style="padding: 8px 12px; border: 1px solid #e5e5e5; font-weight: 600;">NIF/CIF</td><td style="padding: 8px 12px; border: 1px solid #e5e5e5;">${safe.nif || "N/A"}</td></tr>
           <tr><td style="padding: 8px 12px; border: 1px solid #e5e5e5; font-weight: 600;">Fecha</td><td style="padding: 8px 12px; border: 1px solid #e5e5e5;">${now}</td></tr>
         </table>
       </div>
