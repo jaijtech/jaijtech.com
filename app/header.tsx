@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
-  { href: "/nexus", label: "Nexus", anchor: "/#nexus" },
+  { href: "/nexus", label: "Nexus" },
   { href: "/developers", label: "Developers" },
   { href: "/dossier", label: "Dossier" },
 ];
@@ -34,7 +34,7 @@ export default function Header() {
           {navLinks.map((link) => (
             <Link
               key={link.href}
-              href={link.anchor ?? link.href}
+              href={link.href}
               className={`border-b-2 pb-0.5 text-sm transition-colors ${
                 isActive(link.href)
                   ? "border-accent text-white"
