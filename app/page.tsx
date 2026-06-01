@@ -477,7 +477,7 @@ Console.WriteLine(res.EstadoAeat);  // "aceptado"
           {audienceFor.map((a) => (
             <div
               key={a.title}
-              className="flex gap-5 rounded-xl border border-border bg-surface p-6"
+              className="flex gap-5 rounded-xl border border-emerald-500/20 bg-emerald-500/5 p-6"
             >
               <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent/10 text-accent">
                 <svg
@@ -502,7 +502,7 @@ Console.WriteLine(res.EstadoAeat);  // "aceptado"
             </div>
           ))}
         </div>
-        <div className="mt-10 rounded-xl border border-border bg-surface p-8">
+        <div className="mt-10 rounded-xl border border-rose-500/20 bg-rose-500/5 p-8">
           <h3 className="text-lg font-semibold">No es para ti si…</h3>
           <ul className="mt-4 space-y-3">
             {audienceNotFor.map((item) => (
