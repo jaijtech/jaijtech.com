@@ -58,8 +58,8 @@ export async function POST(request: NextRequest) {
       <div style="font-family: system-ui, -apple-system, sans-serif; max-width: 520px; margin: 0 auto; color: #1a1a1a;">
         <p style="font-size: 16px;">Hola ${safe.name},</p>
         <p>Hemos recibido tu mensaje y te responderemos en menos de 24h laborables.</p>
-        <p>Mientras tanto, puedes consultar la documentación en
-          <a href="https://docs.jaijtech.com" style="color: #2563EB; text-decoration: none;">docs.jaijtech.com</a>.
+        <p>Mientras tanto, puedes consultar los recursos técnicos en
+          <a href="https://jaijtech.com/developers" style="color: #2563EB; text-decoration: none;">jaijtech.com/developers</a>.
         </p>
         <br />
         <p>El equipo de JaijTech</p>

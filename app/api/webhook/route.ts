@@ -46,7 +46,7 @@ export async function POST(request: NextRequest) {
             <h1>¡Gracias por suscribirte!</h1>
             <p>Tu suscripción a jaijtech está activa.</p>
             <p>Empieza con la documentación:</p>
-            <p><a href="https://docs.jaijtech.com">docs.jaijtech.com</a></p>
+            <p><a href="https://jaijtech.com/developers">jaijtech.com/developers</a></p>
             <p>Instala el SDK:</p>
             <code>npm install @jaijtech/verifactu</code>
             <p>Si necesitas ayuda, escríbenos a <a href="mailto:info@jaijtech.com">info@jaijtech.com</a>.</p>

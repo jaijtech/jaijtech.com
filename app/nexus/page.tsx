@@ -324,14 +324,12 @@ export default function NexusPage() {
             </pre>
           </div>
           <div className="mt-10 text-center">
-            <a
-              href="https://docs.jaijtech.com"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/developers"
               className="text-sm text-accent underline-offset-4 hover:underline"
             >
-              Ver documentación completa →
-            </a>
+              Documentación técnica →
+            </Link>
           </div>
         </div>
       </section>

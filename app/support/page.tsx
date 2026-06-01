@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Soporte",
@@ -18,18 +19,16 @@ export default function SupportPage() {
       </div>
       <div className="mt-16 grid gap-6 md:grid-cols-2">
         <div className="rounded-xl border border-border bg-surface p-6">
-          <h3 className="text-lg font-semibold">Documentación</h3>
+          <h3 className="text-lg font-semibold">Documentación técnica</h3>
           <p className="mt-2 text-sm text-muted">
-            Guías, tutoriales y referencia de API completa.
+            Guías, recursos para desarrolladores y evaluación técnica.
           </p>
-          <a
-            href="https://docs.jaijtech.com"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/developers"
             className="mt-4 inline-block text-sm text-accent hover:underline"
           >
-            docs.jaijtech.com &rarr;
-          </a>
+            Documentación técnica &rarr;
+          </Link>
         </div>
         <div className="rounded-xl border border-border bg-surface p-6">
           <h3 className="text-lg font-semibold">Email</h3>

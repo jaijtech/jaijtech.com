@@ -44,14 +44,6 @@ export default function Header() {
               {link.label}
             </Link>
           ))}
-          <a
-            href="https://docs.jaijtech.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="border-b-2 border-transparent pb-0.5 text-sm text-muted transition-colors hover:text-foreground"
-          >
-            Documentación
-          </a>
           <Link
             href="/pilot"
             className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${

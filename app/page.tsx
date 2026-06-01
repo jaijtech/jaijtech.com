@@ -399,14 +399,12 @@ Console.WriteLine(res.EstadoAeat);  // "aceptado"
           </pre>
         </div>
         <div className="mt-12 text-center">
-          <a
-            href="https://docs.jaijtech.com"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/developers"
             className="text-sm text-accent underline-offset-4 hover:underline"
           >
-            Ver documentación completa →
-          </a>
+            Documentación técnica →
+          </Link>
         </div>
       </section>
 
@@ -684,14 +682,12 @@ Console.WriteLine(res.EstadoAeat);  // "aceptado"
             <p className="mt-2 text-sm leading-relaxed text-muted">
               Guías de integración y referencia de la API del runtime.
             </p>
-            <a
-              href="https://docs.jaijtech.com"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/developers"
               className="mt-4 inline-block text-sm text-accent underline-offset-4 hover:underline"
             >
-              docs.jaijtech.com →
-            </a>
+              Documentación técnica →
+            </Link>
           </div>
           <div className="rounded-xl border border-border bg-surface p-6">
             <h3 className="text-lg font-semibold">

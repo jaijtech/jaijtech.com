@@ -396,14 +396,6 @@ export default function DossierPage() {
           >
             Solicitar un piloto
           </Link>
-          <a
-            href="https://docs.jaijtech.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-lg border border-border bg-background px-8 py-3 text-base font-medium text-foreground transition-colors hover:bg-surface-bright"
-          >
-            Ver documentación
-          </a>
           <Link
             href="/developers"
             className="rounded-lg border border-border bg-background px-8 py-3 text-base font-medium text-foreground transition-colors hover:bg-surface-bright"

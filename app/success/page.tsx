@@ -16,14 +16,12 @@ export default function SuccessPage() {
           los detalles de acceso.
         </p>
         <div className="mt-8 space-y-3">
-          <a
-            href="https://docs.jaijtech.com"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/developers"
             className="block rounded-lg bg-accent px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-accent/90"
           >
-            Ir a la documentación
-          </a>
+            Documentación técnica
+          </Link>
           <Link
             href="/"
             className="block rounded-lg border border-border px-6 py-3 text-sm font-medium transition-colors hover:bg-surface-bright"

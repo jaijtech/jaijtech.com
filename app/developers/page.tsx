@@ -139,14 +139,6 @@ export default function DevelopersPage() {
           </div>
           <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm">
             <a
-              href="https://docs.jaijtech.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-accent underline-offset-4 hover:underline"
-            >
-              Documentación →
-            </a>
-            <a
               href="https://www.npmjs.com/package/@jaijtech/verifactu"
               target="_blank"
               rel="noopener noreferrer"

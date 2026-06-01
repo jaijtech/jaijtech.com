@@ -42,14 +42,12 @@ function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-12">
         <div className="flex flex-col items-center gap-6">
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-muted">
-            <a
-              href="https://docs.jaijtech.com"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/developers"
               className="transition-colors hover:text-foreground"
             >
-              Documentación
-            </a>
+              Documentación técnica
+            </Link>
             <Link
               href="/contacto"
               className="transition-colors hover:text-foreground"
