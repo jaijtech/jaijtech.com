@@ -8,17 +8,47 @@ const inputClass =
 export default function PilotForm() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [error, setError] = useState("");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
+    setError("");
 
-    // Placeholder submission flow — no backend integration yet (WEB-02.4).
-    // Simulates a successful inquiry locally so the conversion path is testable.
-    await new Promise((resolve) => setTimeout(resolve, 600));
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get("name") as string,
+      company: formData.get("company") as string,
+      role: formData.get("role") as string,
+      email: formData.get("email") as string,
+      website: formData.get("website") as string,
+      productType: formData.get("productType") as string,
+      stack: formData.get("stack") as string,
+      deploymentModel: formData.get("deploymentModel") as string,
+      customerCount: formData.get("customerCount") as string,
+      description: formData.get("description") as string,
+    };
 
-    setLoading(false);
-    setSuccess(true);
+    try {
+      const res = await fetch("/api/pilot", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (!res.ok) {
+        const body = await res.json();
+        throw new Error(body.error || "Error al enviar la solicitud");
+      }
+
+      setSuccess(true);
+    } catch (err) {
+      setError(
+        err instanceof Error ? err.message : "Error al enviar la solicitud",
+      );
+    } finally {
+      setLoading(false);
+    }
   }
 
   if (success) {
@@ -203,6 +233,8 @@ export default function PilotForm() {
           placeholder="Qué producto integrarías con Nexus, caso de uso real y horizonte de despliegue."
         />
       </div>
+
+      {error && <p className="text-sm text-red-500">{error}</p>}
 
       <button
         type="submit"

@@ -34,3 +34,39 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Forms & lead capture
+
+The site has three lead-capture forms, all sharing the same architecture
+(`lib/ratelimit.ts` + [Resend](https://resend.com) email, no database required):
+
+| Form | Page | API route |
+| --- | --- | --- |
+| Contact | `/contacto` | `app/api/contact/route.ts` |
+| Developer register | `/register` | `app/api/register/route.ts` |
+| **Nexus Pilot** | `/pilot` | `app/api/pilot/route.ts` |
+
+### Pilot form flow
+
+```
+Pilot form (app/pilot/pilot-form.tsx)
+  → POST /api/pilot
+    → rate limiting (lib/ratelimit.ts — 3 requests / 10 min per IP)
+    → server-side validation + input sanitization (escapeHtml)
+    → Resend: internal notification ("New Nexus Pilot Request") + requester acknowledgement
+  → success / error response (no DB persistence; email delivery is the system of record)
+```
+
+Captured fields: name, company, role, email, website, product type, current stack,
+deployment model, estimated customer count, project description. All required fields
+are validated server-side; client validation is convenience only.
+
+### Configuration / environment variables
+
+- `RESEND_API_KEY` — **required**. Without it, all three forms fail to send email.
+- Redis (`redis://localhost:6379`) — **optional**. Used by `lib/ratelimit.ts` for
+  distributed rate limiting; falls back to an in-memory store when unavailable.
+
+The internal notification recipient is currently hard-coded to `jaijtech@gmail.com`
+in the API routes, and the sender is `soporte@jaijtech.com` (must be a verified
+Resend domain). No secrets are exposed to the client.
