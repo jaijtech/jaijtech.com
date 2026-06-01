@@ -568,7 +568,7 @@ Console.WriteLine(res.EstadoAeat);  // "aceptado"
               <p className="text-sm font-medium uppercase tracking-widest text-accent">
                 Programa de piloto
               </p>
-              <h2 className="mt-4 text-3xl font-bold tracking-tight md:text-4xl">
+              <h2 className="mt-4 text-3xl font-bold tracking-tight text-[#D7F25B] [text-shadow:0_0_24px_rgba(215,242,91,0.25)] md:text-4xl">
                 Evalúa Nexus en tu propio entorno
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-muted">
@@ -708,32 +708,6 @@ Console.WriteLine(res.EstadoAeat);  // "aceptado"
               className="mt-4 inline-block text-sm text-accent underline-offset-4 hover:underline"
             >
               Apuntarse a la lista →
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* 12. Final CTA band */}
-      <section className="border-t border-border bg-surface">
-        <div className="mx-auto max-w-4xl px-6 py-24 text-center">
-          <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-            Integra un runtime fiscal probado
-          </h2>
-          <p className="mt-4 text-lg text-muted">
-            Empieza con un piloto en tu propio entorno.
-          </p>
-          <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
-            <Link
-              href="/pilot"
-              className="rounded-lg bg-accent px-8 py-3 text-base font-medium text-white transition-colors hover:bg-accent/90"
-            >
-              Solicitar un piloto
-            </Link>
-            <Link
-              href="/dossier"
-              className="rounded-lg border border-border bg-background px-8 py-3 text-base font-medium text-foreground transition-colors hover:bg-surface-bright"
-            >
-              Leer el dossier técnico
             </Link>
           </div>
         </div>
