@@ -137,24 +137,6 @@ export default function DevelopersPage() {
               </p>
             </div>
           </div>
-          <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm">
-            <a
-              href="https://www.npmjs.com/package/@jaijtech/verifactu"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-accent underline-offset-4 hover:underline"
-            >
-              npm: @jaijtech/verifactu →
-            </a>
-            <a
-              href="https://github.com/jaijtech/verifactu"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-accent underline-offset-4 hover:underline"
-            >
-              GitHub →
-            </a>
-          </div>
         </div>
       </section>
 

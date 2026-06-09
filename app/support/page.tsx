@@ -42,34 +42,6 @@ export default function SupportPage() {
             info@jaijtech.com &rarr;
           </a>
         </div>
-        <div className="rounded-xl border border-border bg-surface p-6">
-          <h3 className="text-lg font-semibold">GitHub</h3>
-          <p className="mt-2 text-sm text-muted">
-            Issues, bugs y peticiones de funcionalidades.
-          </p>
-          <a
-            href="https://github.com/jaijtech/verifactu"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-4 inline-block text-sm text-accent hover:underline"
-          >
-            github.com/jaijtech/verifactu &rarr;
-          </a>
-        </div>
-        <div className="rounded-xl border border-border bg-surface p-6">
-          <h3 className="text-lg font-semibold">npm</h3>
-          <p className="mt-2 text-sm text-muted">
-            Paquete oficial y changelog de versiones.
-          </p>
-          <a
-            href="https://www.npmjs.com/package/@jaijtech/verifactu"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-4 inline-block text-sm text-accent hover:underline"
-          >
-            npmjs.com/@jaijtech/verifactu &rarr;
-          </a>
-        </div>
       </div>
       <div className="mt-16 rounded-xl border border-border bg-surface p-8 text-center">
         <h3 className="text-lg font-semibold">

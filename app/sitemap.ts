@@ -39,18 +39,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
-      url: 'https://jaijtech.com/pricing',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.3,
-    },
-    {
-      url: 'https://jaijtech.com/register',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.3,
-    },
-    {
       url: 'https://jaijtech.com/terms',
       lastModified: new Date(),
       changeFrequency: 'yearly',
