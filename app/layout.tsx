@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
-import Script from "next/script";
 import Header from "./header";
 import "./globals.css";
 
@@ -42,6 +41,12 @@ function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-12">
         <div className="flex flex-col items-center gap-6">
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-muted">
+            <Link
+              href="/nexus/security"
+              className="transition-colors hover:text-foreground"
+            >
+              Seguridad y confianza
+            </Link>
             <Link
               href="/developers"
               className="transition-colors hover:text-foreground"
@@ -92,18 +97,6 @@ export default function RootLayout({
       lang="es"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-5YCGN1NKVZ"
-        strategy="afterInteractive"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-5YCGN1NKVZ');
-        `}
-      </Script>
       <body className="flex min-h-full flex-col">
         <Header />
         <main className="flex-1">{children}</main>

@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 
 const navLinks = [
   { href: "/nexus", label: "Nexus" },
+  { href: "/nexus/security", label: "Seguridad" },
   { href: "/developers", label: "Developers" },
   { href: "/dossier", label: "Dossier" },
 ];
@@ -14,7 +15,10 @@ export default function Header() {
 
   function isActive(href: string) {
     if (href === "/") return pathname === "/";
-    return pathname.startsWith(href);
+    // "/nexus" matches only the page itself, so deeper entries like
+    // "/nexus/security" own their own highlight.
+    if (href === "/nexus") return pathname === "/nexus";
+    return pathname === href || pathname.startsWith(href + "/");
   }
 
   const pilotActive = pathname.startsWith("/pilot");

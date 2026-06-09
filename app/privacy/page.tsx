@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Política de privacidad",
+  title: "Privacidad",
+  description:
+    "Política de privacidad de JaijTech: solo tratamos datos de contacto y de solicitud de piloto. Nexus es local-first y no envía datos fiscales ni telemetría a JaijTech.",
 };
 
 export default function PrivacyPage() {
@@ -11,8 +13,17 @@ export default function PrivacyPage() {
         Política de privacidad
       </h1>
       <p className="mt-2 text-sm text-muted">
-        Última actualización: 13 de abril de 2026
+        Última actualización: 9 de junio de 2026
       </p>
+
+      <div className="mt-8 rounded-xl border border-accent/30 bg-accent/5 p-5 text-sm leading-relaxed text-muted">
+        <span className="font-medium text-foreground">En una línea.</span>{" "}
+        JaijTech solo trata los datos de contacto que nos envías por los
+        formularios del sitio. El software Nexus es local-first: los datos
+        fiscales de tus clientes y los certificados{" "}
+        <span className="font-medium text-foreground">nunca</span> llegan a
+        JaijTech, y Nexus no envía telemetría ni hace llamadas a JaijTech.
+      </div>
 
       <div className="mt-12 space-y-8 text-sm leading-relaxed text-muted">
         <div>
@@ -20,12 +31,9 @@ export default function PrivacyPage() {
             1. Responsable del tratamiento
           </h2>
           <p>
-            El responsable del tratamiento de tus datos personales es jaijtech.
+            El responsable del tratamiento de tus datos personales es JaijTech.
             Puedes contactar con nosotros en{" "}
-            <a
-              href="mailto:info@jaijtech.com"
-              className="text-accent hover:underline"
-            >
+            <a href="mailto:info@jaijtech.com" className="text-accent hover:underline">
               info@jaijtech.com
             </a>
             .
@@ -34,188 +42,147 @@ export default function PrivacyPage() {
 
         <div>
           <h2 className="mb-3 text-lg font-semibold text-foreground">
-            2. Datos que recopilamos
+            2. Qué datos tratamos
           </h2>
-          <p>Recopilamos los siguientes tipos de datos:</p>
+          <p>Únicamente los datos que nos facilitas voluntariamente:</p>
           <ul className="mt-2 list-inside list-disc space-y-1">
             <li>
-              <strong className="text-foreground">Datos de registro:</strong>{" "}
-              nombre, email, empresa y NIF/CIF proporcionados al crear una
-              cuenta.
+              <strong className="text-foreground">Solicitudes de piloto y
+              contacto:</strong> nombre, email, empresa, rol, datos sobre tu
+              producto y stack, y el contenido del mensaje.
             </li>
             <li>
-              <strong className="text-foreground">Datos de facturación:</strong>{" "}
-              información de pago procesada a través de Stripe. No almacenamos
-              datos de tarjetas de crédito en nuestros servidores.
-            </li>
-            <li>
-              <strong className="text-foreground">Datos de uso:</strong> el SDK
-              opera en modo local-first y no envía datos de uso, métricas ni
-              telemetría a los servidores de jaijtech. Los únicos datos de uso
-              que recopilamos son los accesos a jaijtech.com y las solicitudes
-              de soporte.
-            </li>
-            <li>
-              <strong className="text-foreground">
-                Datos de comunicaciones:
-              </strong>{" "}
-              mensajes enviados a través de nuestros canales de soporte.
-            </li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="mb-3 text-lg font-semibold text-foreground">
-            3. Finalidad del tratamiento
-          </h2>
-          <p>Utilizamos tus datos para:</p>
-          <ul className="mt-2 list-inside list-disc space-y-1">
-            <li>Proporcionar y gestionar el acceso al Servicio</li>
-            <li>Procesar pagos y gestionar suscripciones</li>
-            <li>Enviarte comunicaciones relacionadas con el Servicio</li>
-            <li>Mejorar y optimizar el rendimiento del SDK</li>
-            <li>Cumplir con obligaciones legales y fiscales</li>
-            <li>Atender solicitudes de soporte técnico</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="mb-3 text-lg font-semibold text-foreground">
-            4. Base legal
-          </h2>
-          <p>El tratamiento de tus datos se basa en:</p>
-          <ul className="mt-2 list-inside list-disc space-y-1">
-            <li>
-              <strong className="text-foreground">
-                Ejecución del contrato:
-              </strong>{" "}
-              para proporcionarte el Servicio contratado.
-            </li>
-            <li>
-              <strong className="text-foreground">Interés legítimo:</strong>{" "}
-              para mejorar el Servicio y prevenir fraudes.
-            </li>
-            <li>
-              <strong className="text-foreground">Obligación legal:</strong>{" "}
-              para cumplir con la normativa fiscal y tributaria.
-            </li>
-            <li>
-              <strong className="text-foreground">Consentimiento:</strong> para
-              el envío de comunicaciones comerciales.
-            </li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="mb-3 text-lg font-semibold text-foreground">
-            5. Encargados del tratamiento
-          </h2>
-          <p>
-            Compartimos tus datos con los siguientes proveedores que actúan como
-            encargados del tratamiento:
-          </p>
-          <ul className="mt-2 list-inside list-disc space-y-1">
-            <li>
-              <strong className="text-foreground">Stripe:</strong> procesamiento
-              de pagos (EE.UU., con cláusulas contractuales tipo).
-            </li>
-            <li>
-              <strong className="text-foreground">Resend:</strong> envío de
-              emails transaccionales.
+              <strong className="text-foreground">Comunicaciones:</strong>{" "}
+              los mensajes que intercambiamos por email o por nuestros canales de
+              soporte.
             </li>
           </ul>
           <p className="mt-2">
-            No vendemos ni compartimos tus datos personales con terceros para
-            fines publicitarios.
+            No creamos cuentas de usuario ni procesamos pagos en este sitio, por
+            lo que no tratamos credenciales de acceso ni datos de tarjeta.
           </p>
         </div>
 
         <div>
           <h2 className="mb-3 text-lg font-semibold text-foreground">
-            6. Datos fiscales
+            3. Datos fiscales: nunca llegan a JaijTech
           </h2>
           <p>
-            El SDK @jaijtech/verifactu opera en modo local-first. Los datos
-            fiscales (facturas, NIFs, importes, certificados digitales) que el
-            integrador procesa a través del SDK nunca son transmitidos ni
-            almacenados en los servidores de jaijtech. Toda la operativa de
-            firma, encadenamiento y envío a la AEAT se realiza íntegramente en
-            la infraestructura del integrador.
-          </p>
-          <p className="mt-2">
-            El integrador es el único responsable del tratamiento de los datos
-            fiscales de sus clientes finales conforme al RGPD y a la normativa
-            fiscal española.
+            Nexus opera en modo <span className="font-medium text-foreground">local-first</span>.
+            Las facturas, NIFs, importes, certificados y registros de
+            facturación que el integrador procesa con Nexus{" "}
+            <span className="font-medium text-foreground">no</span> se transmiten
+            ni se almacenan en servidores de JaijTech: la firma, el encadenamiento
+            y el envío a la AEAT ocurren íntegramente en la infraestructura del
+            integrador o de su cliente. El integrador (y, en su caso, su cliente)
+            es el único responsable del tratamiento de esos datos conforme al
+            RGPD y a la normativa fiscal española.
           </p>
         </div>
 
         <div>
           <h2 className="mb-3 text-lg font-semibold text-foreground">
-            7. Conservación de datos
+            4. Sin telemetría ni phone-home del producto
           </h2>
           <p>
-            Conservamos tus datos personales mientras mantengas una cuenta
-            activa o mientras sea necesario para proporcionarte el Servicio. Los
-            datos de facturación se conservan durante el plazo legalmente
-            exigido (mínimo 5 años conforme a la normativa fiscal española).
-            Tras la cancelación de tu cuenta, eliminaremos tus datos personales
-            en un plazo máximo de 30 días, salvo obligación legal de
-            conservación.
+            Nexus no emite telemetría, no hace &ldquo;phone-home&rdquo; ni envía
+            pings de licencia a JaijTech por defecto. No recibimos datos de uso
+            del software desde la infraestructura del integrador. El entitlement
+            de licencia se verifica en local, sin conexión saliente hacia
+            JaijTech.
           </p>
         </div>
 
         <div>
           <h2 className="mb-3 text-lg font-semibold text-foreground">
-            8. Tus derechos
+            5. Finalidad y base legal
           </h2>
-          <p>
-            Conforme al Reglamento General de Protección de Datos (RGPD),
-            tienes derecho a:
-          </p>
           <ul className="mt-2 list-inside list-disc space-y-1">
-            <li>Acceder a tus datos personales</li>
-            <li>Rectificar datos inexactos</li>
-            <li>Solicitar la supresión de tus datos</li>
-            <li>Oponerte al tratamiento</li>
-            <li>Solicitar la portabilidad de tus datos</li>
-            <li>Limitar el tratamiento</li>
+            <li>
+              Atender tu solicitud de piloto o consulta y mantener la
+              conversación comercial — base:{" "}
+              <span className="font-medium text-foreground">medidas
+              precontractuales</span> y{" "}
+              <span className="font-medium text-foreground">interés legítimo</span>.
+            </li>
+            <li>
+              Enviarte comunicaciones relacionadas con tu solicitud — base:{" "}
+              interés legítimo o{" "}
+              <span className="font-medium text-foreground">consentimiento</span>{" "}
+              para comunicaciones comerciales.
+            </li>
+            <li>
+              Cumplir obligaciones legales aplicables — base:{" "}
+              <span className="font-medium text-foreground">obligación legal</span>.
+            </li>
           </ul>
-          <p className="mt-2">
-            Para ejercer estos derechos, contacta con nosotros en{" "}
-            <a
-              href="mailto:info@jaijtech.com"
-              className="text-accent hover:underline"
-            >
+        </div>
+
+        <div>
+          <h2 className="mb-3 text-lg font-semibold text-foreground">
+            6. Encargados del tratamiento
+          </h2>
+          <p>
+            Para gestionar los formularios y el correo nos apoyamos en{" "}
+            <strong className="text-foreground">Resend</strong> (envío de emails
+            transaccionales / notificaciones de solicitudes). Comparte los datos
+            estrictamente necesarios para esa finalidad. No vendemos ni
+            compartimos tus datos personales con terceros con fines publicitarios.
+          </p>
+        </div>
+
+        <div>
+          <h2 className="mb-3 text-lg font-semibold text-foreground">
+            7. Cookies y analítica
+          </h2>
+          <p>
+            Este sitio utiliza únicamente{" "}
+            <span className="font-medium text-foreground">cookies técnicas</span>{" "}
+            necesarias para su funcionamiento. No utilizamos cookies de
+            seguimiento ni de publicidad, y{" "}
+            <span className="font-medium text-foreground">no empleamos
+            herramientas de analítica de terceros</span> (como Google Analytics)
+            que rastreen tu navegación.
+          </p>
+        </div>
+
+        <div>
+          <h2 className="mb-3 text-lg font-semibold text-foreground">
+            8. Conservación
+          </h2>
+          <p>
+            Conservamos los datos de contacto mientras dure la conversación
+            comercial y, después, durante el plazo necesario para atender
+            posibles responsabilidades. Atenderemos las solicitudes de supresión
+            conforme a la ley, salvo obligación legal de conservación.
+          </p>
+        </div>
+
+        <div>
+          <h2 className="mb-3 text-lg font-semibold text-foreground">
+            9. Tus derechos
+          </h2>
+          <p>
+            Conforme al RGPD tienes derecho a acceder, rectificar, suprimir,
+            oponerte, limitar el tratamiento y a la portabilidad de tus datos.
+            Para ejercerlos, escríbenos a{" "}
+            <a href="mailto:info@jaijtech.com" className="text-accent hover:underline">
               info@jaijtech.com
             </a>
-            . Responderemos en un plazo máximo de 30 días. También tienes
-            derecho a presentar una reclamación ante la Agencia Española de
-            Protección de Datos (AEPD).
+            . También puedes reclamar ante la Agencia Española de Protección de
+            Datos (AEPD).
           </p>
         </div>
 
         <div>
           <h2 className="mb-3 text-lg font-semibold text-foreground">
-            9. Seguridad
+            10. Seguridad
           </h2>
           <p>
-            Implementamos medidas técnicas y organizativas apropiadas para
-            proteger tus datos personales, incluyendo cifrado en tránsito
-            (TLS), cifrado en reposo, control de accesos y monitorización de
-            seguridad. Los datos fiscales procesados por el SDK no están
-            sujetos a estas medidas porque nunca abandonan la infraestructura
-            del integrador.
-          </p>
-        </div>
-
-        <div>
-          <h2 className="mb-3 text-lg font-semibold text-foreground">
-            10. Cookies
-          </h2>
-          <p>
-            Este sitio web utiliza únicamente cookies técnicas necesarias para
-            el funcionamiento del Servicio. No utilizamos cookies de seguimiento
-            ni de publicidad.
+            Aplicamos medidas técnicas y organizativas razonables para proteger
+            los datos de contacto que tratamos, incluyendo cifrado en tránsito.
+            Los datos fiscales procesados por Nexus no están sujetos a estas
+            medidas porque nunca abandonan la infraestructura del integrador.
           </p>
         </div>
 
@@ -224,10 +191,8 @@ export default function PrivacyPage() {
             11. Modificaciones
           </h2>
           <p>
-            Podemos actualizar esta política de privacidad periódicamente. Los
-            cambios sustanciales se notificarán por email con al menos 30 días
-            de antelación. La versión vigente estará siempre disponible en esta
-            página.
+            Podemos actualizar esta política periódicamente. La versión vigente
+            estará siempre disponible en esta página.
           </p>
         </div>
       </div>
