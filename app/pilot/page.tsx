@@ -139,8 +139,12 @@ const faqs = [
     a: "Depende del alcance de la integración y de la disponibilidad de tu equipo. Definimos el alcance juntos en la conversación inicial; no fijamos plazos que no podamos garantizar.",
   },
   {
+    q: "¿El piloto tiene coste?",
+    a: "Sí. El piloto tiene una tarifa fija y de alcance acotado, que se acredita contra el primer año de licencia OEM. La cifra la concretamos en la conversación inicial.",
+  },
+  {
     q: "¿Qué pasa después del piloto?",
-    a: "Si la validación es correcta, identificamos la vía a producción y pasamos a una conversación de licenciamiento OEM. Durante el piloto no hay compromiso comercial.",
+    a: "Si la validación es correcta, identificamos la vía a producción y pasamos a una conversación de licenciamiento OEM; la tarifa del piloto se acredita contra el primer año. El piloto no obliga a contratar la licencia OEM.",
   },
 ];
 
@@ -180,6 +184,59 @@ export default function PilotPage() {
           >
             Leer el dossier técnico
           </Link>
+        </div>
+      </section>
+
+      {/* Section 1b — How the pilot works (conditions) */}
+      <section className="border-t border-border bg-surface">
+        <div className="mx-auto max-w-6xl px-6 py-24">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+              Cómo funciona el piloto
+            </h2>
+            <p className="mt-4 text-lg text-muted">
+              Condiciones claras, antes de empezar.
+            </p>
+          </div>
+          <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <div className="rounded-xl border border-border bg-background p-6">
+              <h3 className="text-lg font-semibold">Alcance fijo</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted">
+                Acordamos un alcance acotado y cerrado al inicio, con un
+                principio y un final definidos. Sin deriva abierta.
+              </p>
+            </div>
+            <div className="rounded-xl border border-border bg-background p-6">
+              <h3 className="text-lg font-semibold">Tarifa fija y acreditable</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted">
+                El piloto tiene una tarifa fija —la concretamos en la
+                conversación inicial— que se acredita contra el primer año de
+                licencia OEM. No publicamos cifras aquí.
+              </p>
+            </div>
+            <div className="rounded-xl border border-border bg-background p-6">
+              <h3 className="text-lg font-semibold">Bajo Acuerdo de Evaluación</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted">
+                Se realiza bajo un Acuerdo de Evaluación: derecho limitado a
+                evaluar en entorno de prueba, sin producción ni redistribución.
+              </p>
+            </div>
+            <div className="rounded-xl border border-border bg-background p-6">
+              <h3 className="text-lg font-semibold">Solo sandbox</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted">
+                La emisión se valida exclusivamente contra el entorno de pruebas
+                (sandbox) de la AEAT. Nada de producción durante el piloto.
+              </p>
+            </div>
+          </div>
+          <p className="mx-auto mt-8 max-w-3xl text-center text-sm text-muted">
+            El uso en producción y los derechos de embeber y redistribuir Nexus
+            existen solo bajo un{" "}
+            <Link href="/oem" className="text-accent underline-offset-4 hover:underline">
+              Acuerdo de Licencia OEM
+            </Link>{" "}
+            firmado, después del piloto.
+          </p>
         </div>
       </section>
 
@@ -334,6 +391,14 @@ export default function PilotPage() {
               ))}
             </ul>
           </div>
+          <p className="mt-6 text-center text-sm text-muted">
+            Estos criterios siguen la checklist del paquete de evaluación para
+            partners; el camino técnico está en los{" "}
+            <Link href="/developers" className="text-accent underline-offset-4 hover:underline">
+              recursos de integración
+            </Link>
+            .
+          </p>
         </div>
       </section>
 

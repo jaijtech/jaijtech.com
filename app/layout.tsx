@@ -42,6 +42,18 @@ function Footer() {
         <div className="flex flex-col items-center gap-6">
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-muted">
             <Link
+              href="/why-erp-vendors"
+              className="transition-colors hover:text-foreground"
+            >
+              Por qué elegir Nexus
+            </Link>
+            <Link
+              href="/oem"
+              className="transition-colors hover:text-foreground"
+            >
+              Licenciamiento OEM
+            </Link>
+            <Link
               href="/nexus/security"
               className="transition-colors hover:text-foreground"
             >

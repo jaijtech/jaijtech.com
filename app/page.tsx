@@ -689,23 +689,6 @@ Console.WriteLine(res.EstadoAeat);  // "aceptado"
               Documentación técnica →
             </Link>
           </div>
-          <div className="rounded-xl border border-border bg-surface p-6">
-            <h3 className="text-lg font-semibold">
-              Developer Playground{" "}
-              <span className="ml-1 rounded-full border border-border px-2 py-0.5 text-xs font-normal text-muted">
-                próximamente
-              </span>
-            </h3>
-            <p className="mt-2 text-sm leading-relaxed text-muted">
-              Un entorno para probar el contrato de Nexus sin desplegar nada.
-            </p>
-            <Link
-              href="/developers"
-              className="mt-4 inline-block text-sm text-accent underline-offset-4 hover:underline"
-            >
-              Apuntarse a la lista →
-            </Link>
-          </div>
         </div>
       </section>
     </>
