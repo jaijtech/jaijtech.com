@@ -195,8 +195,8 @@ export default function DossierPage() {
           de facturación para usuarios finales. Es infraestructura: un componente
           que el fabricante de ERP, TPV o software de gestión despliega dentro de
           la infraestructura de su cliente y conecta a su producto mediante un
-          adapter. El SDK y los adapters (Java, .NET, PHP, Python) son el punto
-          de entrada técnico al runtime.
+          adapter. Los adapters (Java, .NET, PHP, Python) son la vía de
+          integración con el runtime.
         </p>
       </section>
 

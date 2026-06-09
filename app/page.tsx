@@ -209,10 +209,10 @@ export default function Home() {
               </Link>
             </div>
             <Link
-              href="/developers"
+              href="/why-erp-vendors"
               className="mt-6 text-sm text-muted underline-offset-4 transition-colors hover:text-foreground hover:underline"
             >
-              SDK y herramientas para desarrolladores →
+              Por qué los fabricantes de ERP eligen Nexus →
             </Link>
           </div>
         </div>
@@ -363,7 +363,7 @@ export default function Home() {
 }`}
             </pre>
           </div>
-          {/* SDK / adapter snippet */}
+          {/* Adapter snippet */}
           <div className="rounded-xl border border-border bg-surface p-6">
             <h3 className="text-sm font-semibold text-muted">
               Adapter — misma operación desde tu stack
@@ -659,22 +659,21 @@ Console.WriteLine(res.EstadoAeat);  // "aceptado"
             Para desarrolladores
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted">
-            El punto de entrada técnico a Nexus, para los equipos que evalúan el
-            runtime.
+            Los recursos técnicos para evaluar e integrar el runtime Nexus.
           </p>
         </div>
         <div className="mt-16 grid gap-6 md:grid-cols-3">
           <div className="rounded-xl border border-border bg-surface p-6">
-            <h3 className="text-lg font-semibold">SDK y adapters</h3>
+            <h3 className="text-lg font-semibold">Adapters de integración</h3>
             <p className="mt-2 text-sm leading-relaxed text-muted">
-              El on-ramp para desarrolladores a Nexus: adapters para Java, .NET,
-              PHP y Python con la misma API.
+              Adapters para Java, .NET, PHP y Python, todos sobre la misma API
+              del runtime.
             </p>
             <Link
               href="/developers"
               className="mt-4 inline-block text-sm text-accent underline-offset-4 hover:underline"
             >
-              Explorar el SDK →
+              Ver los recursos de integración →
             </Link>
           </div>
           <div className="rounded-xl border border-border bg-surface p-6">

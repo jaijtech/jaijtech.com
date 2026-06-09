@@ -58,7 +58,7 @@ const problemAspects = [
 // 5. Integration
 const integration = [
   {
-    title: "SDK y adapters",
+    title: "Adapters de integración",
     body: "Adapters oficiales para Java, .NET, PHP y Python, todos sobre la misma API del runtime.",
   },
   {
@@ -292,7 +292,7 @@ export default function NexusPage() {
               Integración
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-muted">
-              El SDK y los adapters son el punto de entrada técnico al runtime.
+              Los adapters y el contrato de API son la vía de integración con el runtime.
             </p>
           </div>
           <div className="mt-16 grid gap-6 md:grid-cols-3">

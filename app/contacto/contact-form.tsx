@@ -118,7 +118,7 @@ export default function ContactForm() {
         </div>
         <div>
           <label htmlFor="nifs" className="block text-sm font-medium">
-            NIFs estimados
+            NIFs a servir (estimado)
           </label>
           <select
             id="nifs"
@@ -146,7 +146,7 @@ export default function ContactForm() {
           required
           rows={5}
           className="mt-1 w-full resize-y rounded-lg border border-border bg-background px-4 py-2.5 text-sm text-foreground placeholder-muted outline-none focus:border-accent focus:ring-1 focus:ring-accent"
-          placeholder="Cuéntanos qué necesitas integrar, cuántos NIFs gestionas, en qué stack..."
+          placeholder="Cuéntanos sobre tu producto, tu stack y a cuántos clientes (NIFs) daría servicio..."
         />
       </div>
       {error && <p className="text-sm text-red-500">{error}</p>}

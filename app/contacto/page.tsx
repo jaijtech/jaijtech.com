@@ -4,7 +4,7 @@ import ContactForm from "./contact-form";
 export const metadata: Metadata = {
   title: "Contacto",
   description:
-    "Hablemos sobre tu integración Verifactu. Volúmenes grandes, planes a medida y consultoría especializada.",
+    "Hablemos de integrar Nexus en tu producto: evaluación, piloto y licenciamiento OEM para fabricantes e integradores de software.",
 };
 
 export default function ContactoPage() {
