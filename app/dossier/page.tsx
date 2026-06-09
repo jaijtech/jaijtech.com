@@ -73,7 +73,7 @@ const tooling = [
     detail: "Respaldo y recuperación del estado del runtime.",
   },
   {
-    name: "Support bundle",
+    name: "Paquete de diagnóstico",
     detail: "Recopilación estructurada de información para el diagnóstico de incidencias.",
   },
   {
@@ -117,7 +117,7 @@ const whyNexus = [
     body: "El runtime se ejecuta donde está el dato. Los datos fiscales y el certificado no salen de la red del cliente.",
   },
   {
-    title: "Embebible en tu producto",
+    title: "Integrable en tu producto",
     body: "Un único componente con adapters para Java, .NET, PHP y Python sobre la misma API.",
   },
   {
@@ -175,7 +175,7 @@ export default function DossierPage() {
           1. Resumen ejecutivo
         </h2>
         <p className="mt-4 leading-relaxed text-muted">
-          Nexus es un runtime appliance fiscal que los fabricantes de software
+          Nexus es un componente fiscal que los fabricantes de software
           integran en su producto para emitir registros VeriFactu. Se ejecuta
           dentro de la infraestructura del cliente: la emisión, la firma
           XAdES-EPES y el encadenamiento ocurren en local, y los datos fiscales
@@ -277,8 +277,8 @@ export default function DossierPage() {
           6. Preparación operativa
         </h2>
         <p className="mt-4 leading-relaxed text-muted">
-          Nexus se opera, no solo se instala. El runtime incluye herramientas
-          para diagnosticar, respaldar y recuperar en producción.
+          El runtime incluye herramientas para diagnosticar, respaldar y
+          recuperar en producción.
         </p>
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
           {tooling.map((t) => (

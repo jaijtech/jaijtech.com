@@ -31,7 +31,7 @@ const pillars = [
     body: "El runtime se ejecuta donde está el dato. Los datos fiscales y el certificado nunca salen de la red de tu cliente.",
   },
   {
-    title: "Embebible",
+    title: "Integrable",
     body: "Un único componente, cualquier stack. Adapters para Java, .NET, PHP y Python con la misma API.",
   },
   {
@@ -45,7 +45,7 @@ const steps = [
   {
     n: "01",
     title: "Despliega el runtime",
-    body: "Nexus corre como appliance dentro de la infraestructura de tu cliente. Sin dependencias externas.",
+    body: "Nexus corre como un contenedor dentro de la infraestructura de tu cliente. Sin dependencias externas.",
   },
   {
     n: "02",
@@ -62,43 +62,43 @@ const steps = [
 // 6. Operability & proof — validation milestones (factual labels only)
 const validations = [
   {
-    name: "AEAT Sandbox Validation",
+    name: "Emisión contra el sandbox de la AEAT",
     detail: "Emisión conforme contra el entorno oficial de pruebas de la AEAT.",
   },
   {
-    name: "AEAT Adversarial Validation",
+    name: "Respuestas adversas de la AEAT",
     detail: "Comportamiento ante respuestas y condiciones adversas de la AEAT.",
   },
   {
-    name: "GTX Atomicity Validation",
-    detail: "Atomicidad transaccional: ningún registro queda a medias.",
+    name: "Atomicidad transaccional",
+    detail: "Ningún registro queda a medias.",
   },
   {
-    name: "Startup Integrity Validation",
+    name: "Integridad en el arranque",
     detail: "Integridad del estado verificada en cada arranque.",
   },
   {
-    name: "Storage Failure Validation",
+    name: "Fallo de almacenamiento",
     detail: "Comportamiento determinista ante fallo de almacenamiento.",
   },
   {
-    name: "Single-Instance Lock Validation",
-    detail: "Garantía de instancia única; sin doble emisión.",
+    name: "Bloqueo de instancia única",
+    detail: "Una sola instancia escribe; sin doble emisión.",
   },
   {
-    name: "Drift Detection",
+    name: "Detección de desviación",
     detail: "Detección de desviación de estado y configuración.",
   },
   {
-    name: "Performance Envelope Validation",
+    name: "Límites de rendimiento",
     detail: "Límites de rendimiento medidos y conocidos.",
   },
   {
-    name: "Soak Testing",
+    name: "Estabilidad bajo carga prolongada",
     detail: "Estabilidad bajo carga sostenida prolongada.",
   },
   {
-    name: "Pilot Readiness Review",
+    name: "Revisión de preparación para piloto",
     detail: "Revisión formal de preparación para piloto.",
   },
 ];
@@ -158,7 +158,7 @@ const dossierContents = [
   "Arquitectura del runtime y boundary de seguridad",
   "Modelo de datos y de emisión",
   "Detalle de las validaciones realizadas",
-  "Modelo operativo: backup, restore y drift detection",
+  "Modelo operativo: copia de seguridad, restauración y detección de desviaciones",
   "Envelope de rendimiento medido",
   "Proceso de piloto y licenciamiento OEM",
 ];
@@ -227,8 +227,8 @@ export default function Home() {
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-muted">
               Las APIs cloud de VeriFactu mueven los datos de tus clientes a
-              servidores de terceros. Nexus invierte el modelo: el runtime va al
-              dato, no el dato al runtime.
+              servidores de terceros. Nexus funciona al revés: se ejecuta donde
+              están los datos, en lugar de enviarlos a un servidor externo.
             </p>
           </div>
           <div className="mt-12 overflow-hidden rounded-xl border border-border">
@@ -268,7 +268,7 @@ export default function Home() {
             Un runtime fiscal que despliegas dentro de tu producto
           </h2>
           <p className="mx-auto mt-4 max-w-3xl text-lg text-muted">
-            Nexus es un runtime appliance: un componente que despliegas dentro
+            Nexus es un componente que despliegas dentro
             de la infraestructura de tu cliente y que emite, firma y encadena
             registros VeriFactu contra la AEAT, sin intermediarios. Implementar
             esa capa desde cero son meses de trabajo normativo y criptográfico
@@ -416,7 +416,7 @@ Console.WriteLine(res.EstadoAeat);  // "aceptado"
               Operabilidad y validación
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-muted">
-              Nexus se opera, no solo se instala. Esto es lo que hemos validado.
+              Nexus está pensado para operarse en producción. Esto es lo que hemos validado.
             </p>
           </div>
           <div className="mt-12 overflow-hidden rounded-xl border border-border">
@@ -518,7 +518,7 @@ Console.WriteLine(res.EstadoAeat);  // "aceptado"
         <div className="mx-auto max-w-6xl px-6 py-24">
           <div className="text-center">
             <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-              Normativa siempre cubierta
+              Al día con la normativa
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-muted">
               Monitorizamos la normativa de la AEAT. Los cambios llegan como

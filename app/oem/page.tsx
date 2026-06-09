@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const audience = [
   {
     title: "Fabricantes de ERP",
-    body: "Añadís VeriFactu a vuestro producto y lo desplegáis en toda vuestra base de clientes.",
+    body: "Añades VeriFactu a tu producto y lo despliegas en toda tu base de clientes.",
   },
   {
     title: "Fabricantes de TPV / POS",
@@ -19,11 +19,11 @@ const audience = [
   },
   {
     title: "ISVs / software houses",
-    body: "Integráis una vez y redistribuís Nexus dentro de vuestro producto.",
+    body: "Integras una vez y redistribuyes Nexus dentro de tu producto.",
   },
   {
     title: "Integradores de sistemas",
-    body: "Desplegáis el runtime dentro de la infraestructura de cada cliente.",
+    body: "Despliegas el runtime dentro de la infraestructura de cada cliente.",
   },
 ];
 
@@ -95,7 +95,7 @@ const notList = [
   "No es un servicio fiscal gestionado: ningún servicio de JaijTech almacena ni envía tus facturas.",
   "No es una comisión por factura ni un modelo de pago por uso.",
   "No es asesoramiento fiscal ni una certificación oficial.",
-  "No es una venta self-service: la relación se formaliza por acuerdo escrito.",
+  "No es una venta de autoservicio: la relación se formaliza por acuerdo escrito.",
 ];
 
 export default function OemPage() {

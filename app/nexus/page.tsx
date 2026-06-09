@@ -4,13 +4,13 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Nexus Runtime",
   description:
-    "Nexus es un runtime appliance fiscal local-first que los fabricantes de ERP, TPV y software de gestión integran en su producto: emisión, firma y encadenado VeriFactu dentro de la red del cliente, sin intermediarios.",
+    "Nexus es un componente fiscal que se ejecuta en local y que los fabricantes de ERP, TPV y software de gestión integran en su producto: emisión, firma y encadenado VeriFactu dentro de la red del cliente, sin intermediarios.",
 };
 
 // 1. What is Nexus — attributes
 const attributes = [
   {
-    title: "Runtime appliance",
+    title: "Un componente que despliegas",
     body: "Un componente ejecutable que despliegas dentro de la infraestructura de tu cliente, no un servicio al que te conectas.",
   },
   {
@@ -18,12 +18,12 @@ const attributes = [
     body: "La emisión, la firma XAdES-EPES y el encadenamiento ocurren en local. Los datos fiscales y el certificado no salen de la red del cliente.",
   },
   {
-    title: "Embebible",
+    title: "Integrable",
     body: "Se integra en tu ERP, TPV o software de gestión mediante un adapter, sobre una API común a todos los lenguajes.",
   },
   {
     title: "Operable",
-    body: "Incluye diagnósticos, backup/restore, support bundle y detección de drift para operarlo en producción.",
+    body: "Incluye diagnósticos, copia de seguridad y restauración, paquete de diagnóstico y detección de desviaciones para operarlo en producción.",
   },
 ];
 
@@ -78,19 +78,19 @@ const operations = [
     detail: "Comando que verifica el estado del runtime y su configuración.",
   },
   {
-    name: "Backup",
+    name: "Copia de seguridad",
     detail: "Respaldo del estado del runtime.",
   },
   {
-    name: "Restore",
+    name: "Restauración",
     detail: "Recuperación del estado a partir de un respaldo.",
   },
   {
-    name: "Support bundle",
+    name: "Paquete de diagnóstico",
     detail: "Recopilación estructurada de información para diagnosticar incidencias.",
   },
   {
-    name: "Drift detection",
+    name: "Detección de desviación",
     detail: "Detección de desviación entre el estado esperado y el real.",
   },
 ];
@@ -98,31 +98,31 @@ const operations = [
 // 7. Validation evidence (documented facts only)
 const validations = [
   {
-    name: "AEAT Sandbox Validation",
+    name: "Emisión contra el sandbox de la AEAT",
     detail: "Emisión conforme contra el entorno oficial de pruebas de la AEAT.",
   },
   {
-    name: "AEAT Adversarial Validation",
+    name: "Respuestas adversas de la AEAT",
     detail: "Comportamiento ante respuestas y condiciones adversas de la AEAT.",
   },
   {
-    name: "GTX Atomicity Validation",
-    detail: "Atomicidad transaccional: ningún registro queda en estado parcial.",
+    name: "Atomicidad transaccional",
+    detail: "Ningún registro queda en estado parcial.",
   },
   {
-    name: "Storage Failure Validation",
+    name: "Fallo de almacenamiento",
     detail: "Comportamiento determinista ante fallo de almacenamiento.",
   },
   {
-    name: "OPS-01",
+    name: "Capacidades operativas",
     detail: "Validación de las capacidades operativas del runtime.",
   },
   {
-    name: "Soak Testing",
+    name: "Estabilidad bajo carga prolongada",
     detail: "Estabilidad bajo carga sostenida prolongada.",
   },
   {
-    name: "Pilot Readiness Review",
+    name: "Revisión de preparación para piloto",
     detail: "Revisión formal de preparación para piloto.",
   },
 ];
@@ -131,7 +131,7 @@ const validations = [
 const faqs = [
   {
     q: "¿Nexus está en la nube?",
-    a: "No. Nexus es un runtime appliance local-first que se despliega en la infraestructura del cliente. No es una API cloud a la que se envían facturas.",
+    a: "No. Nexus es un componente que se ejecuta en local, dentro de la infraestructura del cliente. No es una API cloud a la que se envían facturas.",
   },
   {
     q: "¿Salen los datos de nuestra infraestructura?",
@@ -164,7 +164,7 @@ export default function NexusPage() {
             El runtime VeriFactu que integras en tu producto
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-muted">
-            Nexus es un runtime appliance fiscal: un componente que los
+            Nexus es un componente fiscal que los
             fabricantes de ERP, TPV y software de gestión despliegan dentro de la
             infraestructura de su cliente y que emite, firma y encadena registros
             VeriFactu contra la AEAT, sin intermediarios.
@@ -341,7 +341,7 @@ export default function NexusPage() {
             Capacidades operativas
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-muted">
-            Nexus se opera, no solo se instala.
+            Herramientas para operar el componente en producción.
           </p>
         </div>
         <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

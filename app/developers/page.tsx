@@ -4,14 +4,14 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Recursos de integración",
   description:
-    "Recursos técnicos para evaluar e integrar Nexus: contrato de API, OpenAPI, el camino First Success en modo demo y el paquete de evaluación para partners. El producto es el runtime Nexus.",
+    "Recursos técnicos para evaluar e integrar Nexus: contrato de API, OpenAPI, el camino a una primera emisión en modo demo y el paquete de evaluación para socios. El producto es el runtime Nexus.",
 };
 
 // 2. API contract overview
 const contract = [
   {
     title: "API HTTP local",
-    body: "Hablas con el runtime por HTTP dentro de la red del cliente. Autenticación por clave de appliance (cabecera X-Nexus-Key).",
+    body: "Hablas con el runtime por HTTP dentro de la red del cliente. Autenticación por clave del componente (cabecera X-Nexus-Key).",
   },
   {
     title: "Publicar y consultar",
@@ -22,7 +22,7 @@ const contract = [
     body: "Cada envío lleva una clave de idempotencia: reintentar nunca crea duplicados. La emisión es exactly-once efectiva.",
   },
   {
-    title: "Fail-closed",
+    title: "Se detiene de forma segura",
     body: "Si el runtime no puede aceptar trabajo de forma segura, responde con un error explícito y reintentable en lugar de descartar en silencio.",
   },
 ];
@@ -38,7 +38,7 @@ const packageContents = [
     body: "El contrato completo: endpoints, esquemas, idempotencia, polling, patrón outbox y errores.",
   },
   {
-    name: "First Success",
+    name: "Primera emisión",
     body: "El camino más corto a una operación aceptada, en modo demo, sin certificado ni AEAT.",
   },
   {
@@ -99,7 +99,7 @@ const faqs = [
   },
   {
     q: "¿Puedo probar sin certificado ni AEAT?",
-    a: "Sí. El camino First Success usa un modo demo que completa operaciones en local —sin certificado, sin AEAT, sin red— para que pruebes la coreografía de integración de extremo a extremo. Después apuntas el mismo código al sandbox de la AEAT.",
+    a: "Sí. El modo demo completa operaciones en local —sin certificado, sin AEAT, sin red— para que pruebes la integración de extremo a extremo. Después apuntas el mismo código al sandbox de la AEAT.",
   },
   {
     q: "¿Cómo obtengo el paquete y la imagen?",
@@ -171,7 +171,7 @@ export default function DevelopersPage() {
           <div className="mx-auto mt-10 max-w-2xl">
             <pre className="overflow-x-auto rounded-xl border border-border bg-background p-5 font-mono text-xs leading-relaxed text-muted">
 {`POST /v1/verifactu/alta        # Nexus, en la red de tu cliente
-X-Nexus-Key: <clave-appliance>
+X-Nexus-Key: <clave-del-componente>
 X-Idempotency-Key: ERP:INV-2026.0001
 X-External-Reference: INV-2026.0001
 
@@ -189,7 +189,7 @@ GET /v1/operations/op_…        # consulta el estado terminal
         </div>
       </section>
 
-      {/* 3. OpenAPI + First Success */}
+      {/* 3. OpenAPI + primera emisión */}
       <section className="mx-auto max-w-6xl px-6 py-24">
         <div className="grid gap-6 md:grid-cols-2">
           <div className="rounded-xl border border-border bg-surface p-8">
@@ -202,7 +202,7 @@ GET /v1/operations/op_…        # consulta el estado terminal
             </p>
           </div>
           <div className="rounded-xl border border-border bg-surface p-8">
-            <h3 className="text-xl font-semibold">First Success</h3>
+            <h3 className="text-xl font-semibold">Primera emisión</h3>
             <p className="mt-3 text-sm leading-relaxed text-muted">
               El camino más corto desde &ldquo;tengo el paquete&rdquo; a
               &ldquo;veo una operación aceptada&rdquo;. Usa un modo demo que

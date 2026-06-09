@@ -27,7 +27,7 @@ const model = [
 const inScope = [
   "Comportamiento del runtime y del contrato de la API.",
   "Integración mediante los adapters y el modelo de despliegue.",
-  "Diagnóstico técnico con el doctor y el support bundle.",
+  "Diagnóstico técnico con el comando doctor y el paquete de diagnóstico.",
   "Errores del runtime y consultas sobre el protocolo VeriFactu.",
 ];
 

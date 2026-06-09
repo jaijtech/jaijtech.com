@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Términos",
   description:
-    "Términos de uso del sitio web de JaijTech y resumen del modelo de licenciamiento de Nexus: source-available comercial, evaluación → piloto → acuerdo OEM. No es una venta self-service ni una suscripción SaaS.",
+    "Términos de uso del sitio web de JaijTech y resumen del modelo de licenciamiento de Nexus: source-available comercial, evaluación → piloto → acuerdo OEM. No es una venta de autoservicio ni una suscripción SaaS.",
 };
 
 export default function TermsPage() {
@@ -50,8 +50,8 @@ export default function TermsPage() {
             2. Qué es Nexus
           </h2>
           <p>
-            Nexus es un <span className="font-medium text-foreground">runtime
-            appliance fiscal local-first</span> que los fabricantes de ERP, TPV
+            Nexus es un <span className="font-medium text-foreground">componente
+            fiscal que se ejecuta en local</span> que los fabricantes de ERP, TPV
             y software de gestión integran en su propio producto para emitir
             registros VeriFactu. Se ejecuta dentro de la infraestructura del
             cliente del integrador: la emisión, la firma y el encadenamiento
@@ -115,7 +115,7 @@ export default function TermsPage() {
 
         <div>
           <h2 className="mb-3 text-lg font-semibold text-foreground">
-            5. Sin venta self-service ni suscripción
+            5. Sin venta de autoservicio ni suscripción
           </h2>
           <p>
             El Sitio <span className="font-medium text-foreground">no</span>{" "}

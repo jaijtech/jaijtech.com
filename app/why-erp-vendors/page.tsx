@@ -17,7 +17,7 @@ const comparison = [
   {
     axis: "API cloud de VeriFactu",
     cost: "Los datos fiscales de tu cliente viajan a servidores de terceros y el proveedor entra en la ruta de envío; dependes de su disponibilidad.",
-    nexus: "El runtime va al dato: emisión en local, dentro de la red de tu cliente, sin intermediario en la ruta.",
+    nexus: "Emisión en local, dentro de la red de tu cliente, sin intermediario en la ruta.",
   },
   {
     axis: "Middleware genérico de e-invoicing",
@@ -61,7 +61,7 @@ const integrationStory = [
   {
     n: "03",
     title: "Consultas el resultado y lo guardas",
-    body: "Consultas la operación por su identificador o por tu propia referencia, y guardas el estado terminal en tu factura. Si el runtime no puede aceptar trabajo de forma segura, falla de forma cerrada y explícita.",
+    body: "Consultas la operación por su identificador o por tu propia referencia, y guardas el estado terminal en tu factura. Si el runtime no puede aceptar trabajo de forma segura, se detiene y lo indica de forma explícita en lugar de descartarlo en silencio.",
   },
 ];
 

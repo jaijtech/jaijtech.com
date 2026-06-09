@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Seguridad y confianza",
   description:
-    "El modelo de confianza de Nexus para revisiones de seguridad de ERP: local-first, los datos fiscales y el certificado nunca salen de la red del cliente, sin telemetría ni phone-home, código source-available auditable y postura fail-closed.",
+    "El modelo de confianza de Nexus para revisiones de seguridad de ERP: se ejecuta en local, los datos fiscales y el certificado no salen de la red del cliente, sin telemetría ni conexiones salientes, con código fuente disponible para auditoría y un diseño que se detiene de forma segura ante la duda.",
 };
 
 // 1. Trust properties — the headline guarantees
@@ -42,7 +42,7 @@ const boundaryPoints = [
 // 3. Posture
 const posture = [
   {
-    title: "Fail-closed",
+    title: "Se detiene de forma segura",
     body: "Ante una situación incierta, el runtime prefiere rechazar trabajo antes que arriesgar un registro incorrecto, y deja constancia observable de por qué.",
   },
   {
@@ -62,7 +62,7 @@ const evidence = [
     detail: "Verificación del estado del runtime y de su configuración, ejecutable por el operador.",
   },
   {
-    name: "Support bundle",
+    name: "Paquete de diagnóstico",
     detail: "Recopilación estructurada de información de diagnóstico, diseñada para no incluir material sensible.",
   },
   {
@@ -219,8 +219,8 @@ export default function SecurityPage() {
           Qué puede comprobar tu equipo
         </h2>
         <p className="mt-4 text-lg leading-relaxed text-muted">
-          El runtime se opera, no solo se instala. Estas capacidades dan a tu
-          equipo evidencia operativa durante la evaluación.
+          Estas capacidades dan a tu equipo evidencia operativa que puede
+          revisar durante la evaluación.
         </p>
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
           {evidence.map((e) => (

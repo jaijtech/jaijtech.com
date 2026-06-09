@@ -12,19 +12,19 @@ export const metadata: Metadata = {
 const audienceFor = [
   {
     title: "Fabricantes de ERP",
-    body: "Añadís VeriFactu a vuestro producto sin construir la capa fiscal desde cero.",
+    body: "Añades VeriFactu a tu producto sin construir la capa fiscal desde cero.",
   },
   {
     title: "Fabricantes de TPV / POS",
-    body: "Necesitáis emisión conforme en cada terminal, ejecutándose en local.",
+    body: "Necesitas emisión conforme en cada terminal, ejecutándose en local.",
   },
   {
     title: "ISVs / software houses",
-    body: "Integráis una vez y desplegáis en toda vuestra base de clientes.",
+    body: "Integras una vez y despliegas en toda tu base de clientes.",
   },
   {
     title: "Integradores de sistemas",
-    body: "Desplegáis un runtime dentro de la infraestructura del cliente.",
+    body: "Despliegas un runtime dentro de la infraestructura del cliente.",
   },
 ];
 
@@ -132,7 +132,7 @@ const faqs = [
   },
   {
     q: "¿Nexus está en la nube?",
-    a: "No. Nexus es un runtime appliance local-first que se despliega en la infraestructura del cliente. No es una API cloud a la que se envían facturas.",
+    a: "No. Nexus es un componente que se ejecuta en local, dentro de la infraestructura del cliente. No es una API cloud a la que se envían facturas.",
   },
   {
     q: "¿Cuánto dura un piloto?",
