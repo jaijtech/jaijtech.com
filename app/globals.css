@@ -22,3 +22,16 @@ body {
   background: var(--color-accent);
   color: white;
 }
+
+/* Hero background — ultrawide responsive fix (WEB-04A.7).
+   On normal 16:9 screens the composed artwork is shown with object-cover.
+   On ultrawide monitors (viewport ratio >= ~2:1, e.g. 21:9 / 32:9) cover
+   would crop the band top/bottom and clip the lock, so switch to contain
+   and centre it. The dark letterbox sides match the section background and
+   the left readability gradient, so no panel/seam appears. No JS. */
+@media (min-aspect-ratio: 2/1) {
+  #producto img.hero-bg {
+    object-fit: contain;
+    object-position: center;
+  }
+}

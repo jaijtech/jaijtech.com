@@ -1,26 +1,27 @@
 import Link from "next/link";
+import Image from "next/image";
 
-// 2. Embed, don't send — Cloud API vs Nexus runtime contrast
-const contrast = [
+// 2. Embed, don't send — SaaS / API cloud vs jaijtech runtime
+const comparison = [
   {
-    axis: "Dónde viven los datos",
+    topic: "Ubicación de los datos",
     cloud: "En servidores de terceros",
-    nexus: "En la red de tu cliente",
+    jaij: "En la red de tu cliente",
   },
   {
-    axis: "Quién custodia el certificado",
+    topic: "Custodia del certificado",
     cloud: "La plataforma cloud",
-    nexus: "Tu cliente, en su infraestructura",
+    jaij: "Tu cliente, en su infraestructura",
   },
   {
-    axis: "Dónde ocurre firma y encadenado",
+    topic: "Firma y encadenado",
     cloud: "En la nube, tras enviar la factura",
-    nexus: "En local, antes de salir de la red",
+    jaij: "En local, antes de salir de la red",
   },
   {
-    axis: "Quién asume el riesgo de cumplimiento",
+    topic: "Riesgo de cumplimiento",
     cloud: "Difuso entre las partes",
-    nexus: "Runtime validado que tú integras",
+    jaij: "Lo asume el integrador, sobre un runtime validado",
   },
 ];
 
@@ -45,7 +46,7 @@ const steps = [
   {
     n: "01",
     title: "Despliega el runtime",
-    body: "Nexus corre como un contenedor dentro de la infraestructura de tu cliente. Sin dependencias externas.",
+    body: "jaijtech runtime corre como un contenedor dentro de la infraestructura de tu cliente. Sin dependencias externas.",
   },
   {
     n: "02",
@@ -166,54 +167,118 @@ const dossierContents = [
 export default function Home() {
   return (
     <>
-      {/* 1. Hero */}
-      <section id="producto" className="relative overflow-hidden">
-        <div
-          className="pointer-events-none absolute inset-0 -z-10"
-          aria-hidden="true"
-        >
-          <div className="absolute left-1/2 top-0 h-[600px] w-[800px] -translate-x-1/2 rounded-full bg-accent/10 blur-3xl" />
+      {/* 1. Hero — cinematic security / data-sovereignty section */}
+      <section id="producto" className="relative overflow-hidden bg-[#070d1a]">
+        {/* Final composed hero artwork (lock + VeriFactu) as the background */}
+        <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+          <Image
+            src="/images/hero-security-verifactu.png"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="hero-bg object-cover object-center"
+          />
+          {/* Dark left-side gradient so the copy stays readable */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#070d1a] via-[#070d1a]/60 to-transparent" />
+          {/* Mobile: extra veil so the artwork never fights the text */}
+          <div className="absolute inset-0 bg-[#070d1a]/45 md:bg-transparent" />
+          {/* Blend into the next section */}
+          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-black" />
         </div>
-        <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-          <div className="flex flex-col items-center text-center">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/Verifactu-logo.png"
-              alt="VeriFactu"
-              className="mb-8 h-14 w-auto"
-            />
-            <h1 className="max-w-4xl text-4xl font-bold leading-tight tracking-tight md:text-6xl lg:text-7xl">
-              El runtime VeriFactu que integras —{" "}
-              <span className="text-accent">
-                no la nube a la que envías facturas.
-              </span>
+
+        {/* Content */}
+        <div className="relative mx-auto flex min-h-[560px] max-w-6xl items-center px-6 py-20 md:min-h-[640px] md:py-28">
+          <div className="w-full max-w-3xl">
+            <h1 className="max-w-xl text-4xl font-bold leading-[1.05] tracking-tight text-white md:text-6xl">
+              Tus datos permanecen{" "}
+              <span className="text-accent">donde deben estar.</span>
             </h1>
-            <p className="mt-8 max-w-2xl text-lg leading-relaxed text-muted md:text-xl">
-              Infraestructura fiscal local-first para fabricantes de ERP, TPV y
-              software de gestión. Nexus se ejecuta dentro de la infraestructura
-              de tu cliente: los datos fiscales y el certificado nunca salen de
-              su red.
+
+            <p className="mt-6 max-w-lg text-lg leading-relaxed text-white/70">
+              Tus facturas, certificados y evidencias fiscales permanecen en tu
+              propia infraestructura,{" "}
+              <span className="font-medium text-white">bajo tu control</span> y
+              sin depender de servicios de terceros. Cumple VeriFactu sin ceder
+              tus datos.
             </p>
+
+            {/* Trust signals */}
+            <ul className="mt-9 flex flex-col gap-4">
+              {[
+                {
+                  label: "No custodiamos certificados",
+                  // shield with check
+                  icon: (
+                    <>
+                      <path d="M12 3 5 5.6v5.2c0 4.4 2.9 7.5 7 8.9 4.1-1.4 7-4.5 7-8.9V5.6L12 3z" />
+                      <path d="m9.2 11.8 1.9 1.9 3.7-3.7" />
+                    </>
+                  ),
+                },
+                {
+                  label: "No almacenamos tus facturas",
+                  // data store, struck through
+                  icon: (
+                    <>
+                      <ellipse cx="12" cy="6" rx="7" ry="2.6" />
+                      <path d="M5 6v6c0 1.4 3.1 2.6 7 2.6s7-1.2 7-2.6V6" />
+                      <path d="M5 12v6c0 1.4 3.1 2.6 7 2.6 1.2 0 2.3-.1 3.3-.3" />
+                      <path d="m4 3.5 16 17" />
+                    </>
+                  ),
+                },
+                {
+                  label: "No dependes de la nube",
+                  // cloud off
+                  icon: (
+                    <>
+                      <path d="M6.5 18A4 4 0 0 1 6 10.1" />
+                      <path d="M8.5 7.2A6 6 0 0 1 18 10.4a3.6 3.6 0 0 1 2.3 5.4" />
+                      <path d="M9.5 18h7" />
+                      <path d="m3 3.5 17.5 17.5" />
+                    </>
+                  ),
+                },
+              ].map((item) => (
+                <li
+                  key={item.label}
+                  className="flex items-center gap-3 whitespace-nowrap text-sm font-medium text-[#D7F25B]"
+                >
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-accent/30 bg-accent/10 text-accent shadow-[0_0_24px_-8px_#2563eb]">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.6"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      {item.icon}
+                    </svg>
+                  </span>
+                  {item.label}
+                </li>
+              ))}
+            </ul>
+
+            {/* CTAs */}
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <Link
                 href="/pilot"
-                className="rounded-lg bg-accent px-8 py-3 text-base font-medium text-white transition-colors hover:bg-accent/90"
+                className="rounded-lg bg-accent px-8 py-3 text-center text-base font-medium text-white transition-colors hover:bg-accent/90"
               >
                 Solicitar un piloto
               </Link>
               <Link
                 href="/dossier"
-                className="rounded-lg border border-border bg-surface px-8 py-3 text-base font-medium text-foreground transition-colors hover:bg-surface-bright"
+                className="rounded-lg border border-white/20 bg-white/5 px-8 py-3 text-center text-base font-medium text-white backdrop-blur transition-colors hover:bg-white/10"
               >
-                Leer el dossier técnico
+                Ver dossier técnico
               </Link>
             </div>
-            <Link
-              href="/why-erp-vendors"
-              className="mt-6 text-sm text-muted underline-offset-4 transition-colors hover:text-foreground hover:underline"
-            >
-              Por qué los fabricantes de ERP eligen Nexus →
-            </Link>
           </div>
         </div>
       </section>
@@ -223,37 +288,102 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-6 py-24">
           <div className="text-center">
             <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-              Integra el runtime, no envíes los datos
+              Integra el runtime, no expongas los datos
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-muted">
-              Las APIs cloud de VeriFactu mueven los datos de tus clientes a
-              servidores de terceros. Nexus funciona al revés: se ejecuta donde
-              están los datos, en lugar de enviarlos a un servidor externo.
+            <p className="mx-auto mt-4 max-w-5xl text-lg text-muted">
+              Otras soluciones Saas / APIs cloud de VeriFactu que puedes
+              encontrar en el mercado mueven y procesan los datos de tus clientes
+              en servidores de terceros, pierdes absolutamente su control.
+            </p>
+            <p className="mx-auto mt-5 max-w-5xl text-lg font-semibold text-white">
+              jaijtech funciona al revés: se ejecuta donde están los datos en
+              lugar de enviarlos a un servidor externo.
             </p>
           </div>
-          <div className="mt-12 overflow-hidden rounded-xl border border-border">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-border bg-background">
-                  <th className="px-5 py-3 text-left font-semibold"></th>
-                  <th className="px-5 py-3 text-left font-semibold text-muted">
-                    API cloud
-                  </th>
-                  <th className="px-5 py-3 text-left font-semibold text-accent">
-                    Nexus runtime
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {contrast.map((row) => (
-                  <tr key={row.axis} className="border-b border-border last:border-0">
-                    <td className="px-5 py-4 font-medium">{row.axis}</td>
-                    <td className="px-5 py-4 text-muted">{row.cloud}</td>
-                    <td className="px-5 py-4 text-foreground">{row.nexus}</td>
-                  </tr>
+          <div className="mt-12 grid gap-6 md:grid-cols-[max-content_1fr_1fr] md:gap-x-5">
+            {/* Topic labels — destacados en blanco, a la izquierda (desktop) */}
+            <div className="hidden md:block">
+              <div className="h-12" aria-hidden="true" />
+              <div className="mt-3 rounded-2xl border-2 border-transparent p-6">
+                {comparison.map((row) => (
+                  <div
+                    key={row.topic}
+                    className="flex min-h-[64px] items-center justify-end border-b border-transparent py-2 last:border-0"
+                  >
+                    <span className="text-right text-sm font-semibold text-white">
+                      {row.topic}
+                    </span>
+                  </div>
                 ))}
-              </tbody>
-            </table>
+              </div>
+            </div>
+
+            {/* jaijtech runtime — panel positivo (candado) */}
+            <div>
+              <div className="flex items-center gap-3">
+                <div className="flex flex-1 items-center justify-between gap-3 rounded-full bg-accent px-6 py-3">
+                  <span className="text-sm font-bold uppercase tracking-wide text-white md:text-base">
+                    jaijtech runtime
+                  </span>
+                  <span className="h-px w-8 shrink-0 bg-white/50" />
+                </div>
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 border-accent bg-accent/10 text-accent">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="5" y="11" width="14" height="9" rx="2" />
+                    <path d="M8 11V7a4 4 0 0 1 8 0v4" />
+                  </svg>
+                </div>
+              </div>
+              <div className="mt-3 rounded-2xl border-2 border-accent/50 p-6">
+                {comparison.map((row) => (
+                  <div
+                    key={row.topic}
+                    className="flex min-h-[64px] flex-col justify-center border-b border-accent/15 py-2 last:border-0"
+                  >
+                    <span className="mb-0.5 text-xs font-semibold uppercase tracking-wide text-white md:hidden">
+                      {row.topic}
+                    </span>
+                    <span className="text-sm font-semibold leading-snug text-accent">
+                      {row.jaij}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* SaaS / API cloud — panel de aviso (warning) */}
+            <div>
+              <div className="flex items-center gap-3">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 border-yellow-400 bg-yellow-400/10 text-yellow-400">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h16.9a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z" />
+                    <line x1="12" y1="9" x2="12" y2="13" />
+                    <line x1="12" y1="17" x2="12.01" y2="17" />
+                  </svg>
+                </div>
+                <div className="flex flex-1 items-center justify-between gap-3 rounded-full bg-yellow-400 px-6 py-3">
+                  <span className="h-px w-8 shrink-0 bg-black/30" />
+                  <span className="text-sm font-bold uppercase tracking-wide text-[#1a1206] md:text-base">
+                    SaaS / API cloud
+                  </span>
+                </div>
+              </div>
+              <div className="mt-3 rounded-2xl border-2 border-yellow-400/40 p-6">
+                {comparison.map((row) => (
+                  <div
+                    key={row.topic}
+                    className="flex min-h-[64px] flex-col justify-center border-b border-yellow-400/15 py-2 last:border-0"
+                  >
+                    <span className="mb-0.5 text-xs font-semibold uppercase tracking-wide text-white md:hidden">
+                      {row.topic}
+                    </span>
+                    <span className="text-sm font-semibold leading-snug text-yellow-400">
+                      {row.cloud}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -262,18 +392,16 @@ export default function Home() {
       <section id="nexus" className="mx-auto max-w-6xl px-6 py-24">
         <div className="text-center">
           <p className="text-sm font-medium uppercase tracking-widest text-accent">
-            Nexus Runtime
+            jaijtech runtime
           </p>
           <h2 className="mt-4 text-3xl font-bold tracking-tight md:text-4xl">
             Un runtime fiscal que despliegas dentro de tu producto
           </h2>
           <p className="mx-auto mt-4 max-w-3xl text-lg text-muted">
-            Nexus es un componente que despliegas dentro
-            de la infraestructura de tu cliente y que emite, firma y encadena
-            registros VeriFactu contra la AEAT, sin intermediarios. Implementar
-            esa capa desde cero son meses de trabajo normativo y criptográfico
-            que no diferencian tu producto. Nexus es esa capa, ya construida y
-            validada.
+            jaijtech runtime es el componente que aporta el cumplimiento
+            VeriFactu a tu producto, ejecutándose dentro de la infraestructura de
+            tu cliente. Te evita construir y mantener esa capa por tu cuenta, sin
+            convertir tu producto en algo dependiente de la nube.
           </p>
         </div>
         <div className="mt-16 grid gap-6 md:grid-cols-3">
@@ -292,7 +420,7 @@ export default function Home() {
             href="/nexus"
             className="text-sm text-accent underline-offset-4 hover:underline"
           >
-            Conoce Nexus en detalle →
+            Conoce jaijtech runtime en detalle →
           </Link>
         </div>
       </section>
